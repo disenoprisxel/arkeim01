@@ -52,9 +52,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
           <img
-            src="/logo.png"
+            src="/logo-fn.png"
             alt="Arkeím"
-            style={{ height: 40, width: 'auto', display: 'block', filter: 'invert(1) hue-rotate(180deg)' }}
+            style={{ height: 40, width: 'auto', display: 'block' }}
           />
         </Link>
 

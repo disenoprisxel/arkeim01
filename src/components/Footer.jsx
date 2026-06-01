@@ -54,9 +54,9 @@ export default function Footer() {
           {/* Brand */}
           <div style={{ flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: 12 }}>
             <img
-              src="/logo.png"
+              src="/logo-fn.png"
               alt="Arkeím"
-              style={{ height: 44, width: 'auto', display: 'block', filter: 'invert(1) hue-rotate(180deg)' }}
+              style={{ height: 44, width: 'auto', display: 'block' }}
             />
             <p
               style={{
