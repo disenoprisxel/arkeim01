@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import RevealText from '../components/RevealText'
+import RevealSection from '../components/RevealSection'
 
 const ARCH2 = '/arch2.png'
 const ARCH3 = '/arch3.png'
@@ -78,19 +80,13 @@ export default function Servicios() {
         >
           Servicios
         </span>
-        <h1
-          style={{
-            fontFamily: 'Syne, sans-serif',
-            fontSize: 'clamp(48px, 6vw, 72px)',
-            fontWeight: 700,
-            color: '#fff',
-            letterSpacing: -2,
-            margin: 0,
-            lineHeight: 1.05,
-          }}
+        <RevealText
+          tag="h1"
+          delay={0.15}
+          style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(48px, 6vw, 72px)', fontWeight: 700, color: '#fff', letterSpacing: -2, margin: 0, lineHeight: 1.05 }}
         >
           Lo que hacemos
-        </h1>
+        </RevealText>
         <p
           style={{
             fontFamily: 'DM Sans, sans-serif',
@@ -224,7 +220,8 @@ export default function Servicios() {
             <img
               src={s.img}
               alt={s.title}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              data-parallax="0.15"
+              style={{ width: '100%', height: '120%', objectFit: 'cover', marginTop: '-10%' }}
             />
           </div>
         </section>

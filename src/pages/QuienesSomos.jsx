@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import RevealText from '../components/RevealText'
+import RevealSection from '../components/RevealSection'
 
 const ARCH1 = '/arch1.png'
 const ARCH2 = '/arch2.png'
@@ -68,19 +70,13 @@ export default function QuienesSomos() {
         >
           Nosotros
         </span>
-        <h1
-          style={{
-            fontFamily: 'Syne, sans-serif',
-            fontSize: 'clamp(48px, 6vw, 80px)',
-            fontWeight: 700,
-            color: '#fff',
-            letterSpacing: -2,
-            margin: 0,
-            lineHeight: 1.05,
-          }}
+        <RevealText
+          tag="h1"
+          delay={0.15}
+          style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(48px, 6vw, 80px)', fontWeight: 700, color: '#fff', letterSpacing: -2, margin: 0, lineHeight: 1.05 }}
         >
           Quiénes Somos
-        </h1>
+        </RevealText>
         <p
           style={{
             fontFamily: 'DM Sans, sans-serif',
@@ -120,19 +116,13 @@ export default function QuienesSomos() {
             >
               El Estudio
             </span>
-            <h2
-              style={{
-                fontFamily: 'Syne, sans-serif',
-                fontSize: 'clamp(32px, 3.5vw, 52px)',
-                fontWeight: 700,
-                color: '#0A0A0A',
-                letterSpacing: -1.5,
-                lineHeight: 1.1,
-                margin: 0,
-              }}
+            <RevealText
+              tag="h2"
+              delay={0.1}
+              style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(32px, 3.5vw, 52px)', fontWeight: 700, color: '#0A0A0A', letterSpacing: -1.5, lineHeight: 1.1, margin: 0 }}
             >
-              Diseñamos,<br />construimos,<br />entregamos
-            </h2>
+              Diseñamos, construimos, entregamos
+            </RevealText>
           </div>
           <p
             style={{
@@ -173,16 +163,14 @@ export default function QuienesSomos() {
         </div>
 
         <div style={{ flex: '1 1 400px', position: 'relative', minHeight: 500 }}>
-          <img
-            src={ARCH2}
-            alt="Estudio Arkeím"
-            style={{
-              width: '100%',
-              height: 520,
-              objectFit: 'cover',
-              borderRadius: 4,
-            }}
-          />
+          <div style={{ width: '100%', height: 520, borderRadius: 4, overflow: 'hidden' }}>
+            <img
+              src={ARCH2}
+              alt="Estudio Arkeím"
+              data-parallax="0.15"
+              style={{ width: '100%', height: '120%', objectFit: 'cover', marginTop: '-10%' }}
+            />
+          </div>
         </div>
       </section>
 
