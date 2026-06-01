@@ -7,8 +7,8 @@ const ARCH1 = '/arch1.png'
 
 const infoItems = [
   { icon: '📍', label: 'Bogotá, Colombia', sub: 'Cra 15 #93-75, Of. 502' },
-  { icon: '✉️', label: 'info@arkeim.co', sub: 'Respondemos en 24h' },
-  { icon: '📞', label: '+57 300 123 4567', sub: 'Lun – Vie · 8:00 – 18:00' },
+  { icon: '✉️', label: 'arkeim.sas@gmail.com', sub: 'Respondemos en 24h' },
+  { icon: '📞', label: '+57 312 412 1866', sub: 'Lun – Vie · 8:00 – 18:00' },
 ]
 
 export default function Contacto() {
@@ -367,7 +367,7 @@ export default function Contacto() {
           También puedes llamarnos
         </p>
         <a
-          href="tel:+573001234567"
+          href="tel:+573124121866"
           style={{
             position: 'relative',
             fontFamily: 'Syne, sans-serif',
@@ -378,7 +378,7 @@ export default function Contacto() {
             letterSpacing: -1,
           }}
         >
-          +57 300 123 4567
+          +57 312 412 1866
         </a>
       </section>
 

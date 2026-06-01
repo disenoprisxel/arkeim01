@@ -154,8 +154,8 @@ export default function Footer() {
             </span>
             {[
               'Bogotá, Colombia',
-              'info@arkeim.co',
-              '+57 300 123 4567',
+              'arkeim.sas@gmail.com',
+              '+57 312 412 1866',
               'Lun – Vie · 8:00 – 18:00',
             ].map(c => (
               <span

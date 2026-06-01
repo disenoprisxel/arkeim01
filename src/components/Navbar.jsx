@@ -67,27 +67,44 @@ export default function Navbar() {
           }}
           className="desktop-links"
         >
-          {links.map(({ to, label }) => (
-            <Link
-              key={to}
-              to={to}
-              style={{
-                fontFamily: 'DM Sans, sans-serif',
-                fontSize: 14,
-                fontWeight: 400,
-                color: location.pathname === to ? '#fff' : 'rgba(255,255,255,0.5)',
-                textDecoration: 'none',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={e => (e.target.style.color = '#fff')}
-              onMouseLeave={e =>
-                (e.target.style.color =
-                  location.pathname === to ? '#fff' : 'rgba(255,255,255,0.5)')
-              }
-            >
-              {label}
-            </Link>
-          ))}
+          {links.map(({ to, label }) => {
+            const active = location.pathname === to
+            return (
+              <Link
+                key={to}
+                to={to}
+                style={{
+                  fontFamily: 'DM Sans, sans-serif',
+                  fontSize: 14,
+                  fontWeight: active ? 500 : 400,
+                  color: active ? '#fff' : 'rgba(255,255,255,0.5)',
+                  textDecoration: 'none',
+                  position: 'relative',
+                  padding: '4px 0',
+                  transition: 'color 0.2s',
+                  letterSpacing: active ? 0.2 : 0,
+                }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#fff' }}
+                onMouseLeave={e => { e.currentTarget.style.color = active ? '#fff' : 'rgba(255,255,255,0.5)' }}
+              >
+                {label}
+                {/* Active indicator */}
+                <span style={{
+                  position: 'absolute',
+                  bottom: -2,
+                  left: 0,
+                  right: 0,
+                  height: 2,
+                  backgroundColor: '#B91C1C',
+                  borderRadius: 1,
+                  transform: active ? 'scaleX(1)' : 'scaleX(0)',
+                  transformOrigin: 'left',
+                  transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1)',
+                  boxShadow: active ? '0 0 6px #B91C1C' : 'none',
+                }} />
+              </Link>
+            )
+          })}
         </div>
 
         {/* CTA button */}

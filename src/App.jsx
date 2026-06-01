@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useParallax } from './hooks/useParallax'
 import ScrollToTop from './components/ScrollToTop'
+import CustomCursor from './components/CustomCursor'
+import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import QuienesSomos from './pages/QuienesSomos'
 import Servicios from './pages/Servicios'
@@ -12,15 +14,17 @@ function AppInner() {
   useParallax()
   return (
     <>
-    <ScrollToTop />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/quienes-somos" element={<QuienesSomos />} />
-      <Route path="/servicios" element={<Servicios />} />
-      <Route path="/proyectos" element={<Proyectos />} />
-      <Route path="/contacto" element={<Contacto />} />
-      <Route path="/proyectos/:id" element={<ProyectoTemplate />} />
-    </Routes>
+      <ScrollToTop />
+      <CustomCursor />
+      <WhatsAppButton />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/quienes-somos" element={<QuienesSomos />} />
+        <Route path="/servicios" element={<Servicios />} />
+        <Route path="/proyectos" element={<Proyectos />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/proyectos/:id" element={<ProyectoTemplate />} />
+      </Routes>
     </>
   )
 }
