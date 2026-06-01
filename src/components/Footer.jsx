@@ -53,17 +53,11 @@ export default function Footer() {
         <div style={{ display: 'flex', gap: 60, flexWrap: 'wrap' }} className="footer-top">
           {/* Brand */}
           <div style={{ flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <span
-              style={{
-                fontFamily: 'Syne, sans-serif',
-                fontSize: 26,
-                fontWeight: 800,
-                color: '#fff',
-                letterSpacing: -0.5,
-              }}
-            >
-              Arkeím
-            </span>
+            <img
+              src="/logo.png"
+              alt="Arkeím"
+              style={{ height: 44, width: 'auto', display: 'block', filter: 'invert(1) hue-rotate(180deg)' }}
+            />
             <p
               style={{
                 fontFamily: 'DM Sans, sans-serif',

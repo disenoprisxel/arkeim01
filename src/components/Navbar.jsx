@@ -50,18 +50,12 @@ export default function Navbar() {
         className="nav-inner"
       >
         {/* Logo */}
-        <Link
-          to="/"
-          style={{
-            fontFamily: 'Syne, sans-serif',
-            fontSize: 26,
-            fontWeight: 800,
-            color: '#fff',
-            textDecoration: 'none',
-            letterSpacing: -0.5,
-          }}
-        >
-          Arkeím
+        <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          <img
+            src="/logo.png"
+            alt="Arkeím"
+            style={{ height: 40, width: 'auto', display: 'block', filter: 'invert(1) hue-rotate(180deg)' }}
+          />
         </Link>
 
         {/* Desktop links */}
