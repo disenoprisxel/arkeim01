@@ -31,10 +31,48 @@ const process = [
 ]
 
 const whyPoints = [
-  { title: 'Enfoque Integral', desc: 'Desde el concepto hasta la llave en mano, manejamos todo el proceso.' },
-  { title: 'Equipo Experto', desc: 'Arquitectos, ingenieros y constructores trabajando en conjunto.' },
-  { title: 'Transparencia Total', desc: 'Comunicación constante y presupuestos claros sin sorpresas.' },
-  { title: 'Resultados Duraderos', desc: 'Materiales de calidad y detalle constructivo que perdura en el tiempo.' },
+  {
+    title: 'Enfoque Integral',
+    desc: 'Desde el concepto hasta la llave en mano, manejamos todo el proceso.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
+        <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+        <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Equipo Experto',
+    desc: 'Arquitectos, ingenieros y constructores trabajando en conjunto.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Transparencia Total',
+    desc: 'Comunicación constante y presupuestos claros sin sorpresas.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Resultados Duraderos',
+    desc: 'Materiales de calidad y detalle constructivo que perdura en el tiempo.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    ),
+  },
 ]
 
 export default function Home() {
@@ -239,8 +277,14 @@ export default function Home() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}>
           {process.map((p, i) => (
             <RevealSection key={p.n} delay={i * 0.12} direction="up">
-              <div style={{ backgroundColor: '#fff', borderRadius: 4, padding: 36, display: 'flex', flexDirection: 'column', gap: 16 }}>
-                <span style={{ fontFamily: 'Syne, sans-serif', fontSize: 13, fontWeight: 700, color: '#B91C1C' }}>{p.n}</span>
+              <div style={{ backgroundColor: '#fff', borderRadius: 4, padding: 36, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <span style={{
+                  fontFamily: 'Syne, sans-serif', fontSize: 72, fontWeight: 800,
+                  color: 'rgba(185,28,28,0.12)', letterSpacing: -4, lineHeight: 1,
+                  marginBottom: -8,
+                }}>
+                  {p.n}
+                </span>
                 <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 22, fontWeight: 700, color: '#0A0A0A', margin: 0, letterSpacing: -0.3 }}>{p.title}</h3>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#6B7280', lineHeight: 1.6 }}>{p.desc}</p>
               </div>
@@ -282,9 +326,9 @@ export default function Home() {
           <div style={{ backgroundColor: '#1A1A1A', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '40px 48px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 32 }} className="why-grid">
             {whyPoints.map((w, i) => (
               <RevealSection key={w.title} delay={i * 0.1} direction="up">
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  <div style={{ width: 32, height: 32, backgroundColor: 'rgba(185,28,28,0.15)', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ width: 10, height: 10, backgroundColor: '#B91C1C', borderRadius: 1 }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <div style={{ width: 44, height: 44, backgroundColor: 'rgba(185,28,28,0.1)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(185,28,28,0.2)' }}>
+                    {w.icon}
                   </div>
                   <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 18, fontWeight: 700, color: '#fff', margin: 0 }}>{w.title}</h3>
                   <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>{w.desc}</p>
