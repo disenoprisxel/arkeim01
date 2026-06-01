@@ -54,7 +54,7 @@ export default function Navbar() {
           <img
             src="/logo-fn.png"
             alt="Arkeím"
-            style={{ height: 40, width: 'auto', display: 'block' }}
+            style={{ height: 50, width: 'auto', display: 'block' }}
           />
         </Link>
 
