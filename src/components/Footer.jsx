@@ -186,7 +186,7 @@ export default function Footer() {
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.25)' }}>
-              © 2025 Arkeím · Bogotá, Colombia
+              © 2026 Arkeím · Bogotá, Colombia
             </span>
             <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>
               Hecho por{' '}
