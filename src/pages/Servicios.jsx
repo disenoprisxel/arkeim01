@@ -16,16 +16,16 @@ const services = [
     img: ARCH2,
   },
   {
-    num: '02', tag: 'CONSTRUCCIÓN', title: 'Construcción de Proyectos',
-    desc: 'Ejecutamos obras con equipos especializados, procesos controlados y materiales certificados. Nuestra metodología garantiza cumplimiento de plazos, presupuestos y estándares de calidad en cada proyecto que entregamos.',
-    points: ['Gestión integral de obra', 'Control de calidad en sitio', 'Proveeduría y logística', 'Informes periódicos al cliente'],
-    img: ARCH3,
-  },
-  {
-    num: '03', tag: 'VISUALIZACIÓN', title: 'Renders y Videos 3D',
+    num: '02', tag: 'VISUALIZACIÓN', title: 'Renders y Videos 3D',
     desc: 'Creamos representaciones fotorrealistas de proyectos arquitectónicos para comunicar ideas con precisión y detalle. Nuestras visualizaciones son herramientas clave para aprobaciones, ventas y presentaciones.',
     points: ['Renders exteriores e interiores', 'Animaciones y recorridos virtuales', 'Imágenes para marketing inmobiliario', 'Presentaciones para inversionistas'],
     img: ARCH4,
+  },
+  {
+    num: '03', tag: 'CONSTRUCCIÓN', title: 'Construcción de Proyectos',
+    desc: 'Ejecutamos obras con equipos especializados, procesos controlados y materiales certificados. Nuestra metodología garantiza cumplimiento de plazos, presupuestos y estándares de calidad en cada proyecto que entregamos.',
+    points: ['Gestión integral de obra', 'Control de calidad en sitio', 'Proveeduría y logística', 'Informes periódicos al cliente'],
+    img: ARCH3,
   },
 ]
 

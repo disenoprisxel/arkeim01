@@ -12,8 +12,8 @@ const ARCH4 = '/arch4.png'
 
 const services = [
   { num: '01', title: 'Diseño Arquitectónico', desc: 'Proyectos residenciales, comerciales e institucionales con enfoque en funcionalidad, estética y contexto urbano.' },
-  { num: '02', title: 'Construcción', desc: 'Gestión integral de obra con equipos especializados, cumplimiento de normas y control riguroso de calidad.' },
-  { num: '03', title: 'Renders y Videos 3D', desc: 'Visualización fotorrealista que permite ver y comunicar el proyecto antes de construirlo.' },
+  { num: '02', title: 'Renders y Videos 3D', desc: 'Visualización fotorrealista que permite ver y comunicar el proyecto antes de construirlo.' },
+  { num: '03', title: 'Construcción', desc: 'Gestión integral de obra con equipos especializados, cumplimiento de normas y control riguroso de calidad.' },
 ]
 
 const projects = [

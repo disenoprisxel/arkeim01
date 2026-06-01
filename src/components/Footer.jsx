@@ -124,7 +124,7 @@ export default function Footer() {
             >
               Servicios
             </span>
-            {['Diseño Arquitectónico', 'Construcción', 'Renders y Videos 3D'].map(s => (
+            {['Diseño Arquitectónico', 'Renders y Videos 3D', 'Construcción'].map(s => (
               <span
                 key={s}
                 style={{
@@ -184,15 +184,26 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <span
-            style={{
-              fontFamily: 'DM Sans, sans-serif',
-              fontSize: 13,
-              color: 'rgba(255,255,255,0.25)',
-            }}
-          >
-            © 2025 Arkeím · Bogotá, Colombia
-          </span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.25)' }}>
+              © 2025 Arkeím · Bogotá, Colombia
+            </span>
+            <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>
+              Hecho por{' '}
+              <a
+                href="https://www.prisxel.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none', fontWeight: 500, transition: 'color 0.2s' }}
+                onMouseEnter={e => (e.target.style.color = '#fff')}
+                onMouseLeave={e => (e.target.style.color = 'rgba(255,255,255,0.45)')}
+              >
+                PRISXEL
+              </a>
+              {' '}con{' '}
+              <span style={{ color: '#e25555' }}>❤</span>
+            </span>
+          </div>
           <div style={{ display: 'flex', gap: 24 }}>
             {['Instagram', 'LinkedIn', 'Behance'].map(s => (
               <a
