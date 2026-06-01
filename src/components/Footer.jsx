@@ -124,7 +124,7 @@ export default function Footer() {
             >
               Servicios
             </span>
-            {['Diseño Arquitectónico', 'Renders y Videos 3D', 'Construcción'].map(s => (
+            {['Diseño Arquitectónico', 'BIM y Coordinación Técnica', 'Visualización Arquitectónica', 'Licencias de Construcción', 'Construcción'].map(s => (
               <span
                 key={s}
                 style={{
