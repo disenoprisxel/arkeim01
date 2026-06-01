@@ -56,7 +56,7 @@ export default function Footer() {
             <img
               src="/logo-fn.png"
               alt="Arkeím"
-              style={{ height: 44, width: 'auto', display: 'block' }}
+              style={{ width: 180, height: 'auto', display: 'block' }}
             />
             <p
               style={{
