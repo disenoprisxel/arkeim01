@@ -176,8 +176,8 @@ export default function ProyectoTemplate() {
       {/* ── VISOR 3D + FICHA TÉCNICA (layout 60/40) ── */}
       <section style={{ backgroundColor: '#0A0A0A', padding: '48px 60px', display: 'flex', gap: 32, alignItems: 'flex-start', flexWrap: 'wrap' }} className="proj-main">
 
-        {/* LEFT — Visor 3D 60% */}
-        <div style={{ flex: '0 0 60%', minWidth: 300, display: 'flex', flexDirection: 'column', gap: 16 }} className="proj-viewer-col">
+        {/* LEFT — Visor 3D 70% */}
+        <div style={{ flex: '0 0 70%', minWidth: 300, display: 'flex', flexDirection: 'column', gap: 16 }} className="proj-viewer-col">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
             <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, color: '#B91C1C', letterSpacing: 5, textTransform: 'uppercase' }}>
               Modelo Interactivo BIM
@@ -217,20 +217,29 @@ export default function ProyectoTemplate() {
           </div>
 
           {/* Descripción */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 16, fontWeight: 700, color: '#fff', margin: 0 }}>Sobre el proyecto</h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ width: 3, height: 22, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
+              <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 20, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.3 }}>Sobre el proyecto</h3>
+            </div>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
           </div>
 
           {/* Desafío & solución */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 13, fontWeight: 700, color: '#B91C1C', margin: 0, letterSpacing: 1, textTransform: 'uppercase' }}>El desafío</h4>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{p.challenge}</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{ width: 3, height: 18, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
+                <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>El desafío</h4>
+              </div>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0, paddingLeft: 13 }}>{p.challenge}</p>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 13, fontWeight: 700, color: '#B91C1C', margin: 0, letterSpacing: 1, textTransform: 'uppercase' }}>La solución</h4>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{p.solution}</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{ width: 3, height: 18, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
+                <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>La solución</h4>
+              </div>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0, paddingLeft: 13 }}>{p.solution}</p>
             </div>
           </div>
 
