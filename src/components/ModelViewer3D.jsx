@@ -8,6 +8,14 @@ const ENVIRONMENTS = [
   { id: 'sunset',    label: 'Atardecer', value: 'https://modelviewer.dev/shared-assets/environments/aircraft_workshop_01_1k.hdr' },
 ]
 
+const BACKGROUNDS = [
+  { id: 'black',      label: 'Negro',        value: '#0D0D0D' },
+  { id: 'dark',       label: 'Gris oscuro',  value: '#2A2A2A' },
+  { id: 'mid',        label: 'Gris medio',   value: '#666666' },
+  { id: 'light',      label: 'Gris claro',   value: '#BEBEBE' },
+  { id: 'white',      label: 'Blanco',       value: '#F5F5F5' },
+]
+
 const TONEMAPS = [
   { id: 'commerce', label: 'Realista' },
   { id: 'neutral',  label: 'Neutro' },
@@ -30,6 +38,7 @@ export default function ModelViewer3D({ src, title }) {
   const [envId,        setEnvId]        = useState('neutral')
   const [toneMap,      setToneMap]      = useState('commerce')
   const [autoRotate,   setAutoRotate]   = useState(true)
+  const [bgId,         setBgId]         = useState('black')
 
   useEffect(() => { import('@google/model-viewer') }, [])
 
@@ -57,7 +66,9 @@ export default function ModelViewer3D({ src, title }) {
     const env = ENVIRONMENTS.find(e => e.id === envId)
     el.environmentImage = env?.value ?? 'neutral'
     el.autoRotate = autoRotate
-  }, [exposure, shadowInt, shadowSoft, shadows, envId, toneMap, autoRotate, loaded])
+    const bg = BACKGROUNDS.find(b => b.id === bgId)
+    el.style.backgroundColor = bg?.value ?? '#0D0D0D'
+  }, [exposure, shadowInt, shadowSoft, shadows, envId, toneMap, autoRotate, bgId, loaded])
 
   return (
     <div style={{ position: 'relative', width: '100%', background: '#0D0D0D', borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' }}>
@@ -170,6 +181,37 @@ export default function ModelViewer3D({ src, title }) {
             overflowY: 'auto',
           }}>
 
+            {/* Background color */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <Label icon="🎨" text="Fondo" />
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                {BACKGROUNDS.map(b => (
+                  <button
+                    key={b.id}
+                    onClick={() => setBgId(b.id)}
+                    title={b.label}
+                    style={{
+                      width: 28, height: 28,
+                      borderRadius: 6,
+                      backgroundColor: b.value,
+                      border: bgId === b.id
+                        ? '2px solid #B91C1C'
+                        : '2px solid rgba(255,255,255,0.12)',
+                      cursor: 'pointer',
+                      transition: 'border-color 0.2s, transform 0.15s',
+                      transform: bgId === b.id ? 'scale(1.15)' : 'scale(1)',
+                      boxShadow: bgId === b.id ? '0 0 6px rgba(185,28,28,0.5)' : 'none',
+                    }}
+                  />
+                ))}
+              </div>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, color: 'rgba(255,255,255,0.25)', letterSpacing: 0.5 }}>
+                {BACKGROUNDS.find(b => b.id === bgId)?.label}
+              </span>
+            </div>
+
+            <Divider />
+
             {/* Environment */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <Label icon="🌅" text="Ambiente" />
@@ -250,7 +292,7 @@ export default function ModelViewer3D({ src, title }) {
 
             {/* Reset */}
             <button
-              onClick={() => { setExposure(0.9); setShadowInt(1.2); setShadowSoft(0.8); setShadows(true); setEnvId('neutral'); setToneMap('commerce'); setAutoRotate(true) }}
+              onClick={() => { setExposure(0.9); setShadowInt(1.2); setShadowSoft(0.8); setShadows(true); setEnvId('neutral'); setToneMap('commerce'); setAutoRotate(true); setBgId('black') }}
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 6, padding: '8px', cursor: 'pointer', fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: 'rgba(255,255,255,0.35)', transition: 'all 0.2s' }}
             >
               Restaurar valores
