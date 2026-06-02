@@ -31,14 +31,14 @@ export default function ModelViewer3D({ src, title }) {
   const [panelOpen, setPanelOpen] = useState(false)
 
   // Lighting state
-  const [exposure,     setExposure]     = useState(0.9)
+  const [exposure,     setExposure]     = useState(0.4)
   const [shadowInt,    setShadowInt]    = useState(1.2)
   const [shadowSoft,   setShadowSoft]   = useState(0.8)
   const [shadows,      setShadows]      = useState(true)
-  const [envId,        setEnvId]        = useState('neutral')
+  const [envId,        setEnvId]        = useState('dawn')
   const [toneMap,      setToneMap]      = useState('commerce')
   const [autoRotate,   setAutoRotate]   = useState(true)
-  const [bgId,         setBgId]         = useState('black')
+  const [bgId,         setBgId]         = useState('dark')
 
   useEffect(() => { import('@google/model-viewer') }, [])
 
@@ -159,12 +159,12 @@ export default function ModelViewer3D({ src, title }) {
             auto-rotate={autoRotate || undefined}
             auto-rotate-delay="1500"
             rotation-per-second="10deg"
-            environment-image="neutral"
+            environment-image="https://modelviewer.dev/shared-assets/environments/spruit_sunrise_1k_HDR.hdr"
             shadow-intensity="1.2"
             shadow-softness="0.8"
-            exposure="0.9"
+            exposure="0.4"
             tone-mapping="commerce"
-            style={{ width: '100%', height: 600, backgroundColor: '#0D0D0D', '--progress-bar-color': 'transparent', '--progress-mask': 'transparent' }}
+            style={{ width: '100%', height: 600, backgroundColor: '#2A2A2A', '--progress-bar-color': 'transparent', '--progress-mask': 'transparent' }}
           />
         </div>
 
@@ -292,7 +292,7 @@ export default function ModelViewer3D({ src, title }) {
 
             {/* Reset */}
             <button
-              onClick={() => { setExposure(0.9); setShadowInt(1.2); setShadowSoft(0.8); setShadows(true); setEnvId('neutral'); setToneMap('commerce'); setAutoRotate(true); setBgId('black') }}
+              onClick={() => { setExposure(0.4); setShadowInt(1.2); setShadowSoft(0.8); setShadows(true); setEnvId('dawn'); setToneMap('commerce'); setAutoRotate(true); setBgId('dark') }}
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 6, padding: '8px', cursor: 'pointer', fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: 'rgba(255,255,255,0.35)', transition: 'all 0.2s' }}
             >
               Restaurar valores
