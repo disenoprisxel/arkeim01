@@ -173,152 +173,73 @@ export default function ProyectoTemplate() {
         </div>
       </section>
 
-      {/* ── PROJECT NAV (breadcrumb + details) ── */}
-      <section
-        style={{
-          backgroundColor: '#0A0A0A',
-          padding: '32px 100px',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: 20,
-        }}
-        className="proj-nav"
-      >
-        <div style={{ display: 'flex', gap: 32, flexWrap: 'wrap' }}>
-          {p.details.slice(0, 4).map(d => (
-            <div key={d.label} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, color: '#B91C1C', letterSpacing: 3, textTransform: 'uppercase' }}>
-                {d.label}
-              </span>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#fff' }}>{d.val}</span>
-            </div>
-          ))}
-        </div>
-        <div style={{ display: 'flex', gap: 12 }}>
-          <Link
-            to="/contacto"
-            style={{
-              fontFamily: 'DM Sans, sans-serif',
-              fontSize: 13,
-              fontWeight: 500,
-              color: '#fff',
-              textDecoration: 'none',
-              backgroundColor: '#B91C1C',
-              padding: '10px 24px',
-              borderRadius: 2,
-            }}
-          >
-            Proyecto similar
-          </Link>
-        </div>
-      </section>
+      {/* ── VISOR 3D + FICHA TÉCNICA (layout 60/40) ── */}
+      <section style={{ backgroundColor: '#0A0A0A', padding: '48px 60px', display: 'flex', gap: 32, alignItems: 'flex-start', flexWrap: 'wrap' }} className="proj-main">
 
-      {/* ── VISOR 3D ── aparece primero si el proyecto tiene modelo */}
-      {p.model3d && (
-        <section style={{ backgroundColor: '#0A0A0A', padding: '60px 100px 0' }} className="viewer-section">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#B91C1C', letterSpacing: 6, textTransform: 'uppercase' }}>
-                  Modelo Interactivo BIM
-                </span>
-                <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: '#fff', letterSpacing: -1, margin: 0 }}>
-                  Explora el proyecto en 3D
-                </h2>
-              </div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.4)', maxWidth: 380, lineHeight: 1.6 }}>
-                Rota, acerca y aleja el modelo para descubrir cada detalle del diseño arquitectónico.
-              </p>
-            </div>
-            <ModelViewer3D src={p.model3d} title={p.title} />
-          </div>
-        </section>
-      )}
-
-      {/* ── DESCRIPTION ── */}
-      <section
-        style={{
-          backgroundColor: '#0A0A0A',
-          padding: '100px',
-          display: 'flex',
-          gap: 80,
-          flexWrap: 'wrap',
-          alignItems: 'flex-start',
-        }}
-        className="proj-desc"
-      >
-        <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: 40 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <h2
-              style={{
-                fontFamily: 'Syne, sans-serif',
-                fontSize: 'clamp(28px, 3vw, 40px)',
-                fontWeight: 700,
-                color: '#fff',
-                letterSpacing: -1,
-                margin: 0,
-              }}
-            >
-              Sobre el proyecto
+        {/* LEFT — Visor 3D 60% */}
+        <div style={{ flex: '0 0 60%', minWidth: 300, display: 'flex', flexDirection: 'column', gap: 16 }} className="proj-viewer-col">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, color: '#B91C1C', letterSpacing: 5, textTransform: 'uppercase' }}>
+              Modelo Interactivo BIM
+            </span>
+            <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(22px, 2.4vw, 32px)', fontWeight: 700, color: '#fff', letterSpacing: -0.8, margin: 0 }}>
+              Explora el proyecto en 3D
             </h2>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 16, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>
-              {p.desc}
-            </p>
           </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div>
-              <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 18, fontWeight: 700, color: '#fff', margin: '0 0 8px' }}>
-                El desafío
-              </h3>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
-                {p.challenge}
-              </p>
-            </div>
-            <div>
-              <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 18, fontWeight: 700, color: '#fff', margin: '0 0 8px' }}>
-                La solución
-              </h3>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
-                {p.solution}
-              </p>
-            </div>
-          </div>
+          {p.model3d
+            ? <ModelViewer3D src={p.model3d} title={p.title} />
+            : (
+              <div style={{ height: 400, backgroundColor: '#111', borderRadius: 12, border: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.2)' }}>Modelo 3D no disponible</span>
+              </div>
+            )
+          }
         </div>
 
-        {/* Details card */}
-        <div
-          style={{
-            flex: '0 0 300px',
-            backgroundColor: '#1A1A1A',
-            border: '1px solid rgba(255,255,255,0.06)',
-            borderRadius: 8,
-            padding: '32px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 20,
-          }}
-        >
-          <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 16, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: 1 }}>
-            FICHA TÉCNICA
-          </h3>
-          <div
-            style={{
-              height: 1,
-              background: 'linear-gradient(90deg, #B91C1C, transparent)',
-            }}
-          />
-          {p.details.map(d => (
-            <div key={d.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#B91C1C', letterSpacing: 2, textTransform: 'uppercase' }}>
-                {d.label}
-              </span>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#fff' }}>{d.val}</span>
+        {/* RIGHT — Info 40% */}
+        <div style={{ flex: 1, minWidth: 260, display: 'flex', flexDirection: 'column', gap: 28 }}>
+
+          {/* Ficha técnica */}
+          <div style={{ backgroundColor: '#1A1A1A', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '28px 28px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ height: 1, flex: 1, background: 'linear-gradient(90deg, #B91C1C, transparent)' }} />
+              <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 11, fontWeight: 700, color: '#B91C1C', margin: 0, letterSpacing: 3, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+                Ficha Técnica
+              </h3>
+              <div style={{ height: 1, flex: 1, background: 'linear-gradient(270deg, #B91C1C, transparent)' }} />
             </div>
-          ))}
+            {p.details.map(d => (
+              <div key={d.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', paddingBottom: 10, borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: 'rgba(255,255,255,0.35)', letterSpacing: 2, textTransform: 'uppercase' }}>{d.label}</span>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#fff', fontWeight: 500 }}>{d.val}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Descripción */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 16, fontWeight: 700, color: '#fff', margin: 0 }}>Sobre el proyecto</h3>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
+          </div>
+
+          {/* Desafío & solución */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 13, fontWeight: 700, color: '#B91C1C', margin: 0, letterSpacing: 1, textTransform: 'uppercase' }}>El desafío</h4>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{p.challenge}</p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 13, fontWeight: 700, color: '#B91C1C', margin: 0, letterSpacing: 1, textTransform: 'uppercase' }}>La solución</h4>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{p.solution}</p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <Link to="/contacto" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 500, color: '#fff', textDecoration: 'none', backgroundColor: '#B91C1C', padding: '12px 24px', borderRadius: 2, textAlign: 'center', display: 'block', transition: 'opacity 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}>
+            Quiero un proyecto similar →
+          </Link>
         </div>
       </section>
 
