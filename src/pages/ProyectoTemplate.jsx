@@ -216,6 +216,28 @@ export default function ProyectoTemplate() {
         </div>
       </section>
 
+      {/* ── VISOR 3D ── aparece primero si el proyecto tiene modelo */}
+      {p.model3d && (
+        <section style={{ backgroundColor: '#0A0A0A', padding: '60px 100px 0' }} className="viewer-section">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#B91C1C', letterSpacing: 6, textTransform: 'uppercase' }}>
+                  Modelo Interactivo BIM
+                </span>
+                <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: '#fff', letterSpacing: -1, margin: 0 }}>
+                  Explora el proyecto en 3D
+                </h2>
+              </div>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.4)', maxWidth: 380, lineHeight: 1.6 }}>
+                Rota, acerca y aleja el modelo para descubrir cada detalle del diseño arquitectónico.
+              </p>
+            </div>
+            <ModelViewer3D src={p.model3d} title={p.title} />
+          </div>
+        </section>
+      )}
+
       {/* ── DESCRIPTION ── */}
       <section
         style={{
@@ -304,26 +326,6 @@ export default function ProyectoTemplate() {
       <div style={{ overflow: 'hidden', height: 600 }}>
         <img src={p.fullImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
-
-      {/* ── VISOR 3D (solo si el proyecto tiene modelo) ── */}
-      {p.model3d && (
-        <section style={{ backgroundColor: '#0A0A0A', padding: '80px 100px' }} className="viewer-section">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#B91C1C', letterSpacing: 6, textTransform: 'uppercase' }}>
-                Modelo Interactivo
-              </span>
-              <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 700, color: '#fff', letterSpacing: -1, margin: 0 }}>
-                Visor 3D del proyecto
-              </h2>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.5)', maxWidth: 560, lineHeight: 1.6 }}>
-                Explora el modelo tridimensional del proyecto. Rótalo, acerca y aleja para descubrir cada detalle del diseño.
-              </p>
-            </div>
-            <ModelViewer3D src={p.model3d} title={p.title} />
-          </div>
-        </section>
-      )}
 
       {/* ── PROJECT DETAILS / GALLERY ── */}
       <section
