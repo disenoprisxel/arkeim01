@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ModelViewer3D from '../components/ModelViewer3D'
 
 const ARCH1 = '/arch1.png'
 const ARCH2 = '/arch2.png'
@@ -8,6 +9,35 @@ const ARCH3 = '/arch3.png'
 const ARCH4 = '/arch4.png'
 
 const projectsData = {
+  'edificio-calle-53': {
+    title: 'Edificio Calle 53',
+    cat: 'Comercial',
+    location: 'Bogotá, Colombia',
+    year: '2025',
+    area: '2.400 m²',
+    status: 'En desarrollo',
+    hero: ARCH3,
+    desc: 'Edificio de uso mixto ubicado en el corredor comercial de la Calle 53 en Bogotá. El proyecto integra oficinas de alto estándar en los pisos superiores con locales comerciales en el primer nivel, articulados por un gran vestíbulo de doble altura que conecta visualmente el espacio público con el interior.',
+    challenge: 'Desarrollar un programa mixto eficiente en un lote estrecho entre medianeras, garantizando iluminación natural en todos los espacios de trabajo y cumpliendo con la normativa de altura y aprovechamiento del sector.',
+    solution: 'Se diseñó una fachada articulada con quiebrasoles verticales que controlan la entrada de luz según la orientación, y un núcleo de circulación desplazado que libera las plantas para una mayor flexibilidad de distribución.',
+    model3d: '/models/edificio-calle-53.glb',
+    img1: ARCH1,
+    fullImg: ARCH4,
+    gallery: [ARCH3, ARCH2, ARCH1, ARCH4],
+    details: [
+      { label: 'Cliente', val: 'Confidencial' },
+      { label: 'Ubicación', val: 'Bogotá, Colombia' },
+      { label: 'Año', val: '2025' },
+      { label: 'Área', val: '2.400 m²' },
+      { label: 'Estado', val: 'En desarrollo' },
+      { label: 'Tipo', val: 'Comercial / Oficinas' },
+    ],
+    related: [
+      { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
+      { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
+      { id: 'centro-cultural', title: 'Centro Cultural Llana', cat: 'Institucional', img: ARCH4 },
+    ],
+  },
   'casa-montes': {
     title: 'Casa Montes',
     cat: 'Residencial',
@@ -274,6 +304,26 @@ export default function ProyectoTemplate() {
       <div style={{ overflow: 'hidden', height: 600 }}>
         <img src={p.fullImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
+
+      {/* ── VISOR 3D (solo si el proyecto tiene modelo) ── */}
+      {p.model3d && (
+        <section style={{ backgroundColor: '#0A0A0A', padding: '80px 100px' }} className="viewer-section">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#B91C1C', letterSpacing: 6, textTransform: 'uppercase' }}>
+                Modelo Interactivo
+              </span>
+              <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 700, color: '#fff', letterSpacing: -1, margin: 0 }}>
+                Visor 3D del proyecto
+              </h2>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: 'rgba(255,255,255,0.5)', maxWidth: 560, lineHeight: 1.6 }}>
+                Explora el modelo tridimensional del proyecto. Rótalo, acerca y aleja para descubrir cada detalle del diseño.
+              </p>
+            </div>
+            <ModelViewer3D src={p.model3d} title={p.title} />
+          </div>
+        </section>
+      )}
 
       {/* ── PROJECT DETAILS / GALLERY ── */}
       <section
