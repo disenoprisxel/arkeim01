@@ -10,7 +10,7 @@ const ARCH4 = '/arch4.png'
 
 const projectsData = {
   'edificio-calle-53': {
-    title: 'Edificio Calle 53',
+    title: 'Edificio We Live 53',
     cat: 'Comercial',
     location: 'Bogotá, Colombia',
     year: '2025',
@@ -20,7 +20,7 @@ const projectsData = {
     desc: 'Edificio de uso mixto ubicado en el corredor comercial de la Calle 53 en Bogotá. El proyecto integra oficinas de alto estándar en los pisos superiores con locales comerciales en el primer nivel, articulados por un gran vestíbulo de doble altura que conecta visualmente el espacio público con el interior.',
     challenge: 'Desarrollar un programa mixto eficiente en un lote estrecho entre medianeras, garantizando iluminación natural en todos los espacios de trabajo y cumpliendo con la normativa de altura y aprovechamiento del sector.',
     solution: 'Se diseñó una fachada articulada con quiebrasoles verticales que controlan la entrada de luz según la orientación, y un núcleo de circulación desplazado que libera las plantas para una mayor flexibilidad de distribución.',
-    model3d: '/models/edificio-calle-53.glb',
+    model3d: '/models/edificio-we-live-53.glb',
     img1: ARCH1,
     fullImg: ARCH4,
     gallery: [ARCH3, ARCH2, ARCH1, ARCH4],

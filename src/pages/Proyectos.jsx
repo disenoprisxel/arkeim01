@@ -11,7 +11,7 @@ const ARCH3 = '/arch3.png'
 const ARCH4 = '/arch4.png'
 
 const projects = [
-  { id: 'edificio-calle-53', title: 'Edificio Calle 53', cat: 'Comercial', year: '2025', location: 'Bogotá', img: ARCH3, desc: 'Edificio de uso mixto con oficinas y comercio en el corredor de la Calle 53. Incluye visor 3D interactivo.' },
+  { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', year: '2025', location: 'Bogotá', img: ARCH3, desc: 'Edificio de uso mixto con oficinas y comercio en el corredor de la Calle 53. Incluye visor 3D interactivo.' },
   { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', year: '2024', location: 'Bogotá', img: ARCH2, desc: 'Residencia unifamiliar en el norte de Bogotá con énfasis en la conexión interior-exterior y materiales naturales.' },
   { id: 'edificio-zar', title: 'Edificio Zar Pro', cat: 'Comercial', year: '2023', location: 'Medellín', img: ARCH3, desc: 'Torre de oficinas de 12 pisos con fachada ventilada y espacios colaborativos de alto rendimiento.' },
   { id: 'centro-cultural', title: 'Centro Cultural Llana', cat: 'Institucional', year: '2023', location: 'Cali', img: ARCH4, desc: 'Centro cultural comunitario diseñado para integrar arte, formación y espacio público en un barrio periférico.' },
