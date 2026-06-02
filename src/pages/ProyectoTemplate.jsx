@@ -25,12 +25,12 @@ const projectsData = {
     fullImg: ARCH4,
     gallery: [ARCH3, ARCH2, ARCH1, ARCH4],
     details: [
-      { label: 'Cliente', val: 'Confidencial' },
+      { label: 'Cliente', val: 'Renova Diseño Urbano' },
       { label: 'Ubicación', val: 'Bogotá, Colombia' },
       { label: 'Año', val: '2025' },
-      { label: 'Área', val: '2.400 m²' },
-      { label: 'Estado', val: 'En desarrollo' },
-      { label: 'Tipo', val: 'Comercial / Oficinas' },
+      { label: 'Área', val: '1.047,93 m²' },
+      { label: 'Estado', val: 'Licencia aprobada' },
+      { label: 'Tipo', val: 'Uso Mixto · Comercio y servicios básicos · Vivienda colectiva' },
     ],
     related: [
       { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
