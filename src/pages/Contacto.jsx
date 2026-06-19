@@ -17,9 +17,29 @@ const infoItems = [
 export default function Contacto() {
   const [form, setForm] = useState({ nombre: '', email: '', celular: '', ciudad: '', tipo: '', descripcion: '' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handle = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
-  const submit = e => { e.preventDefault(); setSent(true) }
+
+  const submit = async e => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error()
+      setSent(true)
+    } catch {
+      setError('Hubo un error al enviar. Intenta de nuevo o escríbenos directamente a arkeim.sas@gmail.com')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
@@ -129,10 +149,13 @@ export default function Contacto() {
                 <label style={labelStyle}>Descripción del proyecto</label>
                 <textarea name="descripcion" value={form.descripcion} onChange={handle} placeholder="Cuéntanos sobre tu proyecto: ubicación, área, presupuesto estimado, plazo..." rows={5} style={{ ...inputStyle, resize: 'vertical', minHeight: 120 }} />
               </div>
-              <button type="submit" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 500, color: '#fff', backgroundColor: '#B91C1C', border: 'none', padding: '14px 32px', borderRadius: 2, cursor: 'pointer', alignSelf: 'flex-start', transition: 'opacity 0.2s' }}
-                onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
-                onMouseLeave={e => e.currentTarget.style.opacity = '1'}>
-                Enviar mensaje →
+              {error && (
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#B91C1C', lineHeight: 1.5 }}>{error}</p>
+              )}
+              <button type="submit" disabled={loading} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 500, color: '#fff', backgroundColor: '#B91C1C', border: 'none', padding: '14px 32px', borderRadius: 2, cursor: loading ? 'not-allowed' : 'pointer', alignSelf: 'flex-start', transition: 'opacity 0.2s', opacity: loading ? 0.7 : 1 }}
+                onMouseEnter={e => { if (!loading) e.currentTarget.style.opacity = '0.85' }}
+                onMouseLeave={e => e.currentTarget.style.opacity = loading ? '0.7' : '1'}>
+                {loading ? 'Enviando...' : 'Enviar mensaje →'}
               </button>
             </form>
           )}
