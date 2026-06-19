@@ -15,7 +15,7 @@ const infoItems = [
 ]
 
 export default function Contacto() {
-  const [form, setForm] = useState({ nombre: '', email: '', tipo: '', descripcion: '' })
+  const [form, setForm] = useState({ nombre: '', email: '', celular: '', ciudad: '', tipo: '', descripcion: '' })
   const [sent, setSent] = useState(false)
 
   const handle = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
@@ -109,6 +109,10 @@ export default function Contacto() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="form-row">
                 <FormField label="Nombre completo" name="nombre" value={form.nombre} onChange={handle} placeholder="Tu nombre" required />
                 <FormField label="Email" name="email" type="email" value={form.email} onChange={handle} placeholder="tu@email.com" required />
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="form-row">
+                <FormField label="Número de celular" name="celular" type="tel" value={form.celular} onChange={handle} placeholder="+57 300 000 0000" />
+                <FormField label="Ciudad" name="ciudad" value={form.ciudad} onChange={handle} placeholder="Tu ciudad" />
               </div>
               <div>
                 <label style={labelStyle}>Tipo de proyecto</label>
