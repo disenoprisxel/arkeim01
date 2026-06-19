@@ -11,6 +11,39 @@
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="msapplication-TileImage" content="/favicon.png" />
     <meta name="theme-color" content="#0A0A0A" />
+
+    <!-- SEO base fallback (react-helmet-async sobreescribe en runtime) -->
+    <meta name="description" content="Arkeím Studio es una firma de arquitectura en Bogotá especializada en diseño arquitectónico, BIM, visualización 3D y construcción." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Arkeím Studio",
+      "url": "https://www.arkeimstudio.com",
+      "logo": "https://www.arkeimstudio.com/logo-fn.png",
+      "image": "https://www.arkeimstudio.com/hero.png",
+      "description": "Firma de arquitectura en Bogotá especializada en diseño arquitectónico, BIM, visualización 3D, licencias de construcción y ejecución de obra.",
+      "telephone": "+573124121866",
+      "email": "arkeim.sas@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cra 15 #93-75, Of. 502",
+        "addressLocality": "Bogotá",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 4.676,
+        "longitude": -74.048
+      },
+      "openingHours": "Mo-Fr 08:00-18:00",
+      "priceRange": "$$",
+      "sameAs": []
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import RevealText from '../components/RevealText'
 import RevealSection from '../components/RevealSection'
+import SEO from '../components/SEO'
 
 const ARCH1 = '/arch1.png'
 const ARCH2 = '/arch2.png'
@@ -28,6 +29,11 @@ export default function Proyectos() {
 
   return (
     <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+      <SEO
+        title="Proyectos de Arquitectura"
+        path="/proyectos"
+        description="Portafolio de proyectos residenciales, comerciales e institucionales de Arkeím Studio en Colombia. Diseño, BIM y construcción de alta calidad."
+      />
       <Navbar />
 
       {/* ── HEADER ── */}

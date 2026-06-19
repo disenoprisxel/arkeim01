@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import RevealText from '../components/RevealText'
 import RevealSection from '../components/RevealSection'
+import SEO from '../components/SEO'
 
 const ARCH3 = '/arch3.png'
 const ARCH1 = '/arch1.png'
@@ -22,6 +23,11 @@ export default function Contacto() {
 
   return (
     <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+      <SEO
+        title="Contacto"
+        path="/contacto"
+        description="Contáctanos para evaluar tu proyecto de arquitectura. Respondemos en menos de 24 horas. Bogotá, Colombia · arkeim.sas@gmail.com · +57 312 412 1866"
+      />
       <Navbar />
 
       {/* ── HEADER ── */}

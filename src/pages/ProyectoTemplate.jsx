@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ModelViewer3D from '../components/ModelViewer3D'
+import SEO from '../components/SEO'
 
 const ARCH1 = '/arch1.png'
 const ARCH2 = '/arch2.png'
@@ -103,6 +104,12 @@ export default function ProyectoTemplate() {
 
   return (
     <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+      <SEO
+        title={p.title}
+        path={`/proyectos/${id}`}
+        description={`${p.title} — Proyecto ${p.cat} de Arkeím Studio en ${p.location}. ${p.desc.slice(0, 120)}...`}
+        image={`https://www.arkeimstudio.com${p.hero}`}
+      />
       <Navbar />
 
       {/* ── HERO IMAGE ── */}

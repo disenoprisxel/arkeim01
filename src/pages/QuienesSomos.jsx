@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import RevealText from '../components/RevealText'
 import RevealSection from '../components/RevealSection'
+import SEO from '../components/SEO'
 
 const ARCH1 = '/arch1.png'
 const ARCH2 = '/arch2.png'
@@ -43,6 +44,11 @@ const team = [
 export default function QuienesSomos() {
   return (
     <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+      <SEO
+        title="Quiénes Somos"
+        path="/quienes-somos"
+        description="Conoce el equipo de Arkeím Studio, firma de arquitectura fundada en 2017 en Bogotá. Arquitectos, ingenieros y especialistas BIM comprometidos con la calidad y la innovación."
+      />
       <Navbar />
 
       {/* ── HERO HEADER ── */}

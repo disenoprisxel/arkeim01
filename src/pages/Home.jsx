@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import RevealText from '../components/RevealText'
 import RevealSection from '../components/RevealSection'
+import SEO from '../components/SEO'
 
 const HERO = '/hero.png'
 const ARCH1 = '/arch1.png'
@@ -80,6 +81,10 @@ const whyPoints = [
 export default function Home() {
   return (
     <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+      <SEO
+        path="/"
+        description="Arkeím Studio es una firma de arquitectura en Bogotá especializada en diseño arquitectónico, BIM, visualización 3D, licencias de construcción y obra. Más de 8 años y 120 proyectos entregados."
+      />
       <Navbar />
 
       {/* ── 01 HERO ── */}

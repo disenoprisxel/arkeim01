@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import RevealText from '../components/RevealText'
 import RevealSection from '../components/RevealSection'
+import SEO from '../components/SEO'
 
 const ARCH2 = '/arch2.png'
 const ARCH3 = '/arch3.png'
@@ -45,6 +46,11 @@ const services = [
 export default function Servicios() {
   return (
     <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+      <SEO
+        title="Servicios de Arquitectura y Construcción"
+        path="/servicios"
+        description="Ofrecemos diseño arquitectónico, BIM y coordinación técnica, visualización 3D, gestión de licencias de construcción y ejecución de obra en Bogotá y Colombia."
+      />
       <Navbar />
 
       {/* ── HEADER ── */}
