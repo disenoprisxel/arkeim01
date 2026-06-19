@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ModelViewer3D from '../components/ModelViewer3D'
+import Lightbox from '../components/Lightbox'
 import SEO from '../components/SEO'
 
 const ARCH1 = '/arch1.png'
@@ -197,6 +198,11 @@ export default function ProyectoTemplate() {
   const p = projectsData[id] || defaultProject
   const [activeModel, setActiveModel] = useState(0)
   const currentModel = p.models ? p.models[activeModel].src : p.model3d
+  const [lightboxIndex, setLightboxIndex] = useState(null)
+  const openLightbox = i => setLightboxIndex(i)
+  const closeLightbox = () => setLightboxIndex(null)
+  const prevImage = () => setLightboxIndex(i => (i - 1 + p.gallery.length) % p.gallery.length)
+  const nextImage = () => setLightboxIndex(i => (i + 1) % p.gallery.length)
 
   return (
     <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
@@ -409,26 +415,20 @@ export default function ProyectoTemplate() {
           {/* Row 1: 2 images */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             {p.gallery.slice(0, 2).map((img, i) => (
-              <div key={i} style={{ height: 380, borderRadius: 4, overflow: 'hidden' }}>
-                <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
+              <GalleryThumb key={i} img={img} onClick={() => openLightbox(i)} />
             ))}
           </div>
           {/* Row 2: 1 wide + 1 */}
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 20 }}>
             {p.gallery.slice(2, 4).map((img, i) => (
-              <div key={i} style={{ height: 380, borderRadius: 4, overflow: 'hidden' }}>
-                <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
+              <GalleryThumb key={i + 2} img={img} onClick={() => openLightbox(i + 2)} />
             ))}
           </div>
           {/* Row 3: optional extra images */}
           {p.gallery.length > 4 && (
             <div style={{ display: 'grid', gridTemplateColumns: `repeat(${p.gallery.slice(4).length}, 1fr)`, gap: 20 }}>
               {p.gallery.slice(4).map((img, i) => (
-                <div key={i} style={{ height: 380, borderRadius: 4, overflow: 'hidden' }}>
-                  <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
+                <GalleryThumb key={i + 4} img={img} onClick={() => openLightbox(i + 4)} />
               ))}
             </div>
           )}
@@ -629,6 +629,16 @@ export default function ProyectoTemplate() {
         </Link>
       </section>
 
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={p.gallery}
+          index={lightboxIndex}
+          onClose={closeLightbox}
+          onPrev={prevImage}
+          onNext={nextImage}
+        />
+      )}
+
       <Footer />
 
       <style>{`
@@ -641,6 +651,41 @@ export default function ProyectoTemplate() {
           .proj-cta { padding: 60px 24px !important; }
         }
       `}</style>
+    </div>
+  )
+}
+
+function GalleryThumb({ img, onClick }) {
+  return (
+    <div
+      onClick={onClick}
+      style={{ height: 380, borderRadius: 4, overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
+    >
+      <img
+        src={img}
+        alt=""
+        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s cubic-bezier(0.16,1,0.3,1)' }}
+        onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
+        onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+      />
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'rgba(0,0,0,0)',
+        transition: 'background 0.3s',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+      }}
+        onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0,0,0,0.25)'; e.currentTarget.querySelector('span').style.opacity = '1' }}
+        onMouseLeave={e => { e.currentTarget.style.background = 'rgba(0,0,0,0)'; e.currentTarget.querySelector('span').style.opacity = '0' }}
+      >
+        <span style={{
+          opacity: 0, transition: 'opacity 0.3s',
+          fontSize: 28, color: '#fff',
+          width: 52, height: 52, borderRadius: '50%',
+          border: '1.5px solid rgba(255,255,255,0.7)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          backdropFilter: 'blur(4px)',
+        }}>⤢</span>
+      </div>
     </div>
   )
 }
