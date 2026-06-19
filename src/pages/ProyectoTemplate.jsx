@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -96,11 +97,43 @@ const defaultProject = {
     { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
     { id: 'edificio-zar', title: 'Edificio Zar Pro', cat: 'Comercial', img: ARCH3 },
   ],
+  'condominio-jaguey': {
+    title: 'Condominio El Jagüey',
+    cat: 'Residencial',
+    location: 'Cundinamarca, Colombia',
+    year: '2025',
+    hero: ARCH2,
+    desc: 'Condominio campestre de vivienda unifamiliar en el municipio de La Mesa, Cundinamarca. El proyecto propone dos tipologías de vivienda que responden a la topografía del terreno, integrando espacios de convivencia, zonas verdes y visuales hacia el paisaje natural circundante.',
+    challenge: 'Diseñar dos tipologías de vivienda diferenciadas que compartan infraestructura común, respetando la topografía natural del lote y maximizando las visuales hacia el paisaje.',
+    solution: 'Se desarrollaron dos prototipos con volumetrías complementarias: Casa 1 de carácter compacto y Casa 2 de disposición longitudinal, ambas organizadas alrededor de patios y terrazas que conectan el interior con el entorno natural.',
+    models: [
+      { label: 'Casa 1', src: '/models/jaguey-casa-1.glb' },
+      { label: 'Casa 2', src: '/models/jaguey-casa-2.glb' },
+    ],
+    img1: ARCH1,
+    fullImg: ARCH3,
+    gallery: [ARCH2, ARCH1, ARCH3, ARCH4],
+    details: [
+      { label: 'Ubicación', val: 'La Mesa, Cundinamarca' },
+      { label: 'Año', val: '2025' },
+      { label: 'Área Casa 1', val: '180 m²' },
+      { label: 'Área Casa 2', val: '240 m²' },
+      { label: 'Estado', val: 'Diseño arquitectónico' },
+      { label: 'Tipo', val: 'Residencial · Condominio campestre' },
+    ],
+    related: [
+      { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
+      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: ARCH3 },
+      { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
+    ],
+  },
 }
 
 export default function ProyectoTemplate() {
   const { id } = useParams()
   const p = projectsData[id] || defaultProject
+  const [activeModel, setActiveModel] = useState(0)
+  const currentModel = p.models ? p.models[activeModel].src : p.model3d
 
   return (
     <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
@@ -193,8 +226,32 @@ export default function ProyectoTemplate() {
               Explora el proyecto en 3D
             </h2>
           </div>
-          {p.model3d
-            ? <ModelViewer3D src={p.model3d} title={p.title} />
+          {p.models && (
+            <div style={{ display: 'flex', gap: 8 }}>
+              {p.models.map((m, i) => (
+                <button
+                  key={m.label}
+                  onClick={() => setActiveModel(i)}
+                  style={{
+                    fontFamily: 'DM Sans, sans-serif',
+                    fontSize: 13,
+                    fontWeight: 500,
+                    color: activeModel === i ? '#fff' : 'rgba(255,255,255,0.45)',
+                    backgroundColor: activeModel === i ? '#B91C1C' : 'rgba(255,255,255,0.05)',
+                    border: activeModel === i ? 'none' : '1px solid rgba(255,255,255,0.1)',
+                    padding: '8px 22px',
+                    borderRadius: 2,
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  {m.label}
+                </button>
+              ))}
+            </div>
+          )}
+          {currentModel
+            ? <ModelViewer3D src={currentModel} title={p.title} />
             : (
               <div style={{ height: 400, backgroundColor: '#111', borderRadius: 12, border: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.2)' }}>Modelo 3D no disponible</span>
