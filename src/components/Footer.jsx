@@ -205,10 +205,16 @@ export default function Footer() {
             </span>
           </div>
           <div style={{ display: 'flex', gap: 24 }}>
-            {['Instagram', 'LinkedIn', 'Behance'].map(s => (
+            {[
+              { label: 'Instagram', url: 'https://www.instagram.com/arkeimsas?igsh=aGg1eG82cmQwbzFk' },
+              { label: 'Facebook', url: 'https://www.facebook.com/Arkeimsas' },
+              { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yilmer-martinez-50152637a/' },
+            ].map(s => (
               <a
-                key={s}
-                href="#"
+                key={s.label}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   fontFamily: 'DM Sans, sans-serif',
                   fontSize: 13,
@@ -219,7 +225,7 @@ export default function Footer() {
                 onMouseEnter={e => (e.target.style.color = '#fff')}
                 onMouseLeave={e => (e.target.style.color = 'rgba(255,255,255,0.3)')}
               >
-                {s}
+                {s.label}
               </a>
             ))}
           </div>

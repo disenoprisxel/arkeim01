@@ -75,11 +75,15 @@ export default function Contacto() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 500, color: '#B91C1C', letterSpacing: 4, textTransform: 'uppercase' }}>Redes sociales</span>
               <div style={{ display: 'flex', gap: 16 }}>
-                {['Instagram', 'LinkedIn', 'Behance'].map(s => (
-                  <a key={s} href="#" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#6B7280', textDecoration: 'none', transition: 'color 0.2s' }}
+                {[
+                  { label: 'Instagram', url: 'https://www.instagram.com/arkeimsas?igsh=aGg1eG82cmQwbzFk' },
+                  { label: 'Facebook', url: 'https://www.facebook.com/Arkeimsas' },
+                  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yilmer-martinez-50152637a/' },
+                ].map(s => (
+                  <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#6B7280', textDecoration: 'none', transition: 'color 0.2s' }}
                     onMouseEnter={e => e.currentTarget.style.color = '#B91C1C'}
                     onMouseLeave={e => e.currentTarget.style.color = '#6B7280'}>
-                    {s}
+                    {s.label}
                   </a>
                 ))}
               </div>
