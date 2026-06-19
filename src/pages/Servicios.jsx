@@ -15,13 +15,13 @@ const services = [
     num: '01', tag: 'DISEÑO', title: 'Diseño Arquitectónico',
     desc: 'Desarrollamos proyectos de arquitectura residencial, comercial e institucional con un enfoque que integra funcionalidad, estética y contexto urbano. Desde el anteproyecto hasta los planos de construcción, acompañamos cada etapa del proceso.',
     points: ['Anteproyecto y concepto', 'Planos arquitectónicos y técnicos', 'Diseño de interiores y exteriores', 'Coordinación con ingeniería'],
-    img: ARCH2,
+    img: '/srv-diseno-arquitectonico.png',
   },
   {
     num: '02', tag: 'BIM', title: 'BIM y Coordinación Técnica',
     desc: 'Modelamos y coordinamos todos los sistemas del proyecto bajo estándares BIM (Building Information Modeling), integrando arquitectura, estructura e instalaciones en un único modelo digital colaborativo que minimiza errores y optimiza la construcción.',
     points: ['Modelado BIM multidisciplinar', 'Detección y resolución de interferencias', 'Presupuestación y cuantificación', 'Gestión documental del proyecto'],
-    img: ARCH1,
+    img: '/srv-bim-coordinacion.png',
   },
   {
     num: '03', tag: 'VISUALIZACIÓN', title: 'Visualización Arquitectónica',
