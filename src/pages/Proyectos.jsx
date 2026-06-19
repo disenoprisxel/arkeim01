@@ -12,6 +12,7 @@ const ARCH3 = '/arch3.png'
 const ARCH4 = '/arch4.png'
 
 const projects = [
+  { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', year: '2025', location: 'Bogotá', img: ARCH3, desc: 'Torre corporativa de 8 niveles con fachada de vidrio y aluminio en Bogotá. Incluye visor 3D interactivo.' },
   { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', year: '2025', location: 'Bogotá', img: ARCH3, desc: 'Edificio de uso mixto con oficinas y comercio en el corredor de la Calle 53. Incluye visor 3D interactivo.' },
   { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', year: '2025', location: 'Cundinamarca', img: ARCH2, desc: 'Condominio campestre con dos tipologías de vivienda unifamiliar en La Mesa, Cundinamarca. Visor 3D con dos geometrías.' },
   { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', year: '2024', location: 'Bogotá', img: ARCH2, desc: 'Residencia unifamiliar en el norte de Bogotá con énfasis en la conexión interior-exterior y materiales naturales.' },
