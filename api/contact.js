@@ -1,8 +1,8 @@
-const { Resend } = require('resend')
+import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
@@ -22,7 +22,7 @@ module.exports = async function handler(req, res) {
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #f9f9f9;">
           <div style="background: #0A0A0A; padding: 24px 32px; border-radius: 4px 4px 0 0;">
-            <h1 style="color: #fff; font-size: 22px; margin: 0; letter-spacing: -0.5px;">Nuevo mensaje de contacto</h1>
+            <h1 style="color: #fff; font-size: 22px; margin: 0;">Nuevo mensaje de contacto</h1>
             <p style="color: rgba(255,255,255,0.4); font-size: 13px; margin: 6px 0 0;">arkeimstudio.com</p>
           </div>
           <div style="background: #fff; padding: 32px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 4px 4px;">
