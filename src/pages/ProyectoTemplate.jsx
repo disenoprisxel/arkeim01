@@ -11,6 +11,41 @@ const ARCH3 = '/arch3.png'
 const ARCH4 = '/arch4.png'
 
 const projectsData = {
+  'remoto-living': {
+    title: 'Remoto Living',
+    cat: 'Residencial',
+    location: 'Bogotá, Colombia',
+    year: '2025',
+    hero: '/projects/remoto-living/hero.png',
+    desc: 'Remoto Living es un proyecto de vivienda colectiva orientado al nuevo estilo de vida del trabajo remoto. Cada apartamento se diseñó como una unidad autónoma con zonas de trabajo integradas, complementadas por amenidades compartidas de alto estándar: coworking, gimnasio, piscina y terrazas sociales que fomentan la comunidad entre residentes.',
+    challenge: 'Integrar en un único edificio residencial las necesidades del trabajo desde casa sin sacrificar la calidad habitacional ni la privacidad, y al mismo tiempo generar espacios colectivos que motiven la interacción social.',
+    solution: 'Se desarrolló un programa mixto que concentra las amenidades compartidas en las plantas bajas y la terraza, liberando las unidades residenciales como espacios exclusivamente domésticos con alcobas, salas y terrazas privadas de alta calidad.',
+    model3d: '/models/remoto-living.glb',
+    video: '/projects/remoto-living/interior.mp4',
+    img1: '/projects/remoto-living/coworking.png',
+    fullImg: '/projects/remoto-living/piscina.png',
+    gallery: [
+      '/projects/remoto-living/coworking.png',
+      '/projects/remoto-living/gimnasio.png',
+      '/projects/remoto-living/piscina.png',
+      '/projects/remoto-living/alcoba.png',
+      '/projects/remoto-living/sala.png',
+      '/projects/remoto-living/hero.png',
+    ],
+    details: [
+      { label: 'Ubicación', val: 'Bogotá, Colombia' },
+      { label: 'Año', val: '2025' },
+      { label: 'Área total', val: '4.800 m²' },
+      { label: 'Unidades', val: '48 apartamentos' },
+      { label: 'Estado', val: 'Diseño arquitectónico' },
+      { label: 'Tipo', val: 'Residencial · Vivienda colectiva' },
+    ],
+    related: [
+      { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
+      { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', img: ARCH2 },
+      { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: ARCH3 },
+    ],
+  },
   'edificio-calle-53': {
     title: 'Edificio We Live 53',
     cat: 'Comercial',
@@ -386,8 +421,46 @@ export default function ProyectoTemplate() {
               </div>
             ))}
           </div>
+          {/* Row 3: optional extra images */}
+          {p.gallery.length > 4 && (
+            <div style={{ display: 'grid', gridTemplateColumns: `repeat(${p.gallery.slice(4).length}, 1fr)`, gap: 20 }}>
+              {p.gallery.slice(4).map((img, i) => (
+                <div key={i} style={{ height: 380, borderRadius: 4, overflow: 'hidden' }}>
+                  <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
+
+      {/* ── VIDEO ── */}
+      {p.video && (
+        <section style={{ backgroundColor: '#0A0A0A', padding: '0 0 0' }}>
+          <div style={{ position: 'relative', overflow: 'hidden' }}>
+            {/* Label */}
+            <div style={{ padding: '80px 100px 40px', display: 'flex', flexDirection: 'column', gap: 8 }} className="proj-video-header">
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#B91C1C', letterSpacing: 6, textTransform: 'uppercase' }}>Experiencia visual</span>
+              <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 700, color: '#fff', letterSpacing: -1, margin: 0 }}>
+                El proyecto en movimiento
+              </h2>
+            </div>
+            {/* Video container */}
+            <div style={{ position: 'relative', margin: '0 60px 80px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.6)' }} className="proj-video-wrap">
+              {/* Subtle red border accent */}
+              <div style={{ position: 'absolute', inset: 0, borderRadius: 12, border: '1px solid rgba(185,28,28,0.25)', zIndex: 2, pointerEvents: 'none' }} />
+              <video
+                src={p.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ width: '100%', display: 'block', borderRadius: 12, maxHeight: 720, objectFit: 'cover' }}
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── QUOTE ── */}
       <section
