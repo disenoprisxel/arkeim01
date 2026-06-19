@@ -12,6 +12,7 @@ const ARCH3 = '/arch3.png'
 const ARCH4 = '/arch4.png'
 
 const projects = [
+  { id: 'we-live-78', title: 'We Live 78', cat: 'Comercial', year: '2025', location: 'Bogotá', img: ARCH3, desc: 'Edificio de uso mixto con vivienda, oficinas y comercio sobre la Calle 78 en Bogotá. Incluye visor 3D interactivo.' },
   { id: 'remoto-living', title: 'Remoto Living', cat: 'Residencial', year: '2025', location: 'Bogotá', img: '/projects/remoto-living/hero.png', desc: 'Vivienda colectiva orientada al trabajo remoto con coworking, gimnasio, piscina y terrazas. Incluye visor 3D interactivo.' },
   { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', year: '2025', location: 'Bogotá', img: ARCH3, desc: 'Torre corporativa de 8 niveles con fachada de vidrio y aluminio en Bogotá. Incluye visor 3D interactivo.' },
   { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', year: '2025', location: 'Bogotá', img: ARCH3, desc: 'Edificio de uso mixto con oficinas y comercio en el corredor de la Calle 53. Incluye visor 3D interactivo.' },

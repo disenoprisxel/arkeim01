@@ -12,6 +12,33 @@ const ARCH3 = '/arch3.png'
 const ARCH4 = '/arch4.png'
 
 const projectsData = {
+  'we-live-78': {
+    title: 'We Live 78',
+    cat: 'Comercial',
+    location: 'Bogotá, Colombia',
+    year: '2025',
+    hero: ARCH3,
+    desc: 'Edificio de uso mixto ubicado sobre la Calle 78 en Bogotá, concebido como un nodo de vida urbana que integra vivienda, oficinas y comercio en un solo volumen articulado. La propuesta responde al carácter dinámico del corredor vial con una fachada activa en planta baja y apartamentos de alto estándar en los niveles superiores.',
+    challenge: 'Resolver la convivencia de usos residenciales y comerciales en un mismo edificio sin comprometer la privacidad ni la calidad de vida de los residentes, en un lote de frente reducido sobre una vía de alto tráfico.',
+    solution: 'Se separó verticalmente el programa: comercio y coworking en los primeros tres niveles con acceso independiente desde la calle, y las unidades residenciales a partir del cuarto piso con lobby propio, logrando autonomía total entre los usos.',
+    model3d: '/models/we-live-78.glb',
+    img1: ARCH1,
+    fullImg: ARCH4,
+    gallery: [ARCH3, ARCH1, ARCH4, ARCH2],
+    details: [
+      { label: 'Ubicación', val: 'Calle 78, Bogotá' },
+      { label: 'Año', val: '2025' },
+      { label: 'Área total', val: '2.850 m²' },
+      { label: 'Pisos', val: '10 niveles + sótano' },
+      { label: 'Estado', val: 'Diseño arquitectónico' },
+      { label: 'Tipo', val: 'Uso mixto · Vivienda y comercio' },
+    ],
+    related: [
+      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: ARCH3 },
+      { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: ARCH3 },
+      { id: 'remoto-living', title: 'Remoto Living', cat: 'Residencial', img: '/projects/remoto-living/hero.png' },
+    ],
+  },
   'remoto-living': {
     title: 'Remoto Living',
     cat: 'Residencial',
