@@ -31,6 +31,7 @@ const projectsData = {
       '/projects/remoto-living/alcoba.png',
       '/projects/remoto-living/sala.png',
       '/projects/remoto-living/hero.png',
+      '/projects/remoto-living/interior-003.jpg',
     ],
     details: [
       { label: 'Ubicación', val: 'Bogotá, Colombia' },
