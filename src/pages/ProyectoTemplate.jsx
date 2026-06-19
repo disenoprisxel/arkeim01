@@ -40,6 +40,36 @@ const projectsData = {
       { id: 'centro-cultural', title: 'Centro Cultural Llana', cat: 'Institucional', img: ARCH4 },
     ],
   },
+  'condominio-jaguey': {
+    title: 'Condominio El Jagüey',
+    cat: 'Residencial',
+    location: 'Cundinamarca, Colombia',
+    year: '2025',
+    hero: ARCH2,
+    desc: 'Condominio campestre de vivienda unifamiliar en el municipio de La Mesa, Cundinamarca. El proyecto propone dos tipologías de vivienda que responden a la topografía del terreno, integrando espacios de convivencia, zonas verdes y visuales hacia el paisaje natural circundante.',
+    challenge: 'Diseñar dos tipologías de vivienda diferenciadas que compartan infraestructura común, respetando la topografía natural del lote y maximizando las visuales hacia el paisaje.',
+    solution: 'Se desarrollaron dos prototipos con volumetrías complementarias: Casa 1 de carácter compacto y Casa 2 de disposición longitudinal, ambas organizadas alrededor de patios y terrazas que conectan el interior con el entorno natural.',
+    models: [
+      { label: 'Casa 1', src: '/models/jaguey-casa-1.glb' },
+      { label: 'Casa 2', src: '/models/jaguey-casa-2.glb' },
+    ],
+    img1: ARCH1,
+    fullImg: ARCH3,
+    gallery: [ARCH2, ARCH1, ARCH3, ARCH4],
+    details: [
+      { label: 'Ubicación', val: 'La Mesa, Cundinamarca' },
+      { label: 'Año', val: '2025' },
+      { label: 'Área Casa 1', val: '180 m²' },
+      { label: 'Área Casa 2', val: '240 m²' },
+      { label: 'Estado', val: 'Diseño arquitectónico' },
+      { label: 'Tipo', val: 'Residencial · Condominio campestre' },
+    ],
+    related: [
+      { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
+      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: ARCH3 },
+      { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
+    ],
+  },
   'casa-montes': {
     title: 'Casa Montes',
     cat: 'Residencial',
@@ -97,36 +127,6 @@ const defaultProject = {
     { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
     { id: 'edificio-zar', title: 'Edificio Zar Pro', cat: 'Comercial', img: ARCH3 },
   ],
-  'condominio-jaguey': {
-    title: 'Condominio El Jagüey',
-    cat: 'Residencial',
-    location: 'Cundinamarca, Colombia',
-    year: '2025',
-    hero: ARCH2,
-    desc: 'Condominio campestre de vivienda unifamiliar en el municipio de La Mesa, Cundinamarca. El proyecto propone dos tipologías de vivienda que responden a la topografía del terreno, integrando espacios de convivencia, zonas verdes y visuales hacia el paisaje natural circundante.',
-    challenge: 'Diseñar dos tipologías de vivienda diferenciadas que compartan infraestructura común, respetando la topografía natural del lote y maximizando las visuales hacia el paisaje.',
-    solution: 'Se desarrollaron dos prototipos con volumetrías complementarias: Casa 1 de carácter compacto y Casa 2 de disposición longitudinal, ambas organizadas alrededor de patios y terrazas que conectan el interior con el entorno natural.',
-    models: [
-      { label: 'Casa 1', src: '/models/jaguey-casa-1.glb' },
-      { label: 'Casa 2', src: '/models/jaguey-casa-2.glb' },
-    ],
-    img1: ARCH1,
-    fullImg: ARCH3,
-    gallery: [ARCH2, ARCH1, ARCH3, ARCH4],
-    details: [
-      { label: 'Ubicación', val: 'La Mesa, Cundinamarca' },
-      { label: 'Año', val: '2025' },
-      { label: 'Área Casa 1', val: '180 m²' },
-      { label: 'Área Casa 2', val: '240 m²' },
-      { label: 'Estado', val: 'Diseño arquitectónico' },
-      { label: 'Tipo', val: 'Residencial · Condominio campestre' },
-    ],
-    related: [
-      { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
-      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: ARCH3 },
-      { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
-    ],
-  },
 }
 
 export default function ProyectoTemplate() {
