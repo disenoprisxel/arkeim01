@@ -9,7 +9,7 @@ const ARCH3 = '/arch3.png'
 const ARCH1 = '/arch1.png'
 
 const infoItems = [
-  { icon: '📍', label: 'Bogotá, Colombia', sub: 'Cra 15 #93-75, Of. 502' },
+  { icon: '📍', label: 'Bogotá, Colombia', sub: 'Colombia' },
   { icon: '✉️', label: 'arkeim.sas@gmail.com', sub: 'Respondemos en 24h' },
   { icon: '📞', label: '+57 312 412 1866', sub: 'Lun – Vie · 8:00 – 18:00' },
 ]
@@ -139,7 +139,7 @@ export default function Contacto() {
           <div style={{ position: 'relative', textAlign: 'center' }}>
             <span style={{ fontSize: 32 }}>📍</span>
             <p style={{ fontFamily: 'Syne, sans-serif', fontSize: 18, fontWeight: 700, color: '#0A0A0A', margin: '8px 0 4px' }}>Bogotá, Colombia</p>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#6B7280' }}>Cra 15 #93-75, Of. 502 · Chicó Nogal</p>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#6B7280' }}>Bogotá, Colombia</p>
           </div>
         </section>
       </RevealSection>
