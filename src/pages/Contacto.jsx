@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { Turnstile } from '@marsidev/react-turnstile'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import RevealText from '../components/RevealText'
 import RevealSection from '../components/RevealSection'
 import SEO from '../components/SEO'
+
+const TURNSTILE_SITE_KEY = '0x4AAAAAADny6j9F19OK2GFi'
 
 const ARCH3 = '/arch3.png'
 const ARCH1 = '/arch1.png'
@@ -19,18 +22,23 @@ export default function Contacto() {
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const turnstileToken = useRef('')
 
   const handle = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
   const submit = async e => {
     e.preventDefault()
+    if (!turnstileToken.current) {
+      setError('Verificación de seguridad pendiente. Espera un momento.')
+      return
+    }
     setLoading(true)
     setError('')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, turnstileToken: turnstileToken.current }),
       })
       if (!res.ok) throw new Error()
       setSent(true)
@@ -149,6 +157,12 @@ export default function Contacto() {
                 <label style={labelStyle}>Descripción del proyecto</label>
                 <textarea name="descripcion" value={form.descripcion} onChange={handle} placeholder="Cuéntanos sobre tu proyecto: ubicación, área, presupuesto estimado, plazo..." rows={5} style={{ ...inputStyle, resize: 'vertical', minHeight: 120 }} />
               </div>
+              <Turnstile
+                siteKey={TURNSTILE_SITE_KEY}
+                onSuccess={token => { turnstileToken.current = token }}
+                onError={() => setError('Error en verificación de seguridad. Recarga la página.')}
+                options={{ theme: 'light', size: 'invisible' }}
+              />
               {error && (
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#B91C1C', lineHeight: 1.5 }}>{error}</p>
               )}

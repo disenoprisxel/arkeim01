@@ -7,10 +7,27 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { nombre, email, celular, ciudad, tipo, descripcion } = req.body
+  const { nombre, email, celular, ciudad, tipo, descripcion, turnstileToken } = req.body
 
   if (!nombre || !email) {
     return res.status(400).json({ error: 'Nombre y email son requeridos' })
+  }
+
+  if (!turnstileToken) {
+    return res.status(400).json({ error: 'Verificación de seguridad requerida' })
+  }
+
+  const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      secret: process.env.TURNSTILE_SECRET_KEY,
+      response: turnstileToken,
+    }),
+  })
+  const verifyData = await verifyRes.json()
+  if (!verifyData.success) {
+    return res.status(400).json({ error: 'Verificación de seguridad fallida' })
   }
 
   try {
