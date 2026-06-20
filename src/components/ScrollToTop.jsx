@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false)
+  const { pathname } = useLocation()
+
+  // Reset scroll on route change
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 500)
@@ -17,9 +22,9 @@ export default function ScrollToTop() {
       aria-label="Volver arriba"
       style={{
         position: 'fixed',
-        bottom: 32,
-        right: 32,
-        zIndex: 999,
+        bottom: 92,
+        right: 28,
+        zIndex: 9001,
         width: 48,
         height: 48,
         borderRadius: '50%',
