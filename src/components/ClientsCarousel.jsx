@@ -50,22 +50,28 @@ export default function ClientsCarousel() {
         </h2>
       </div>
 
-      {/* Track container — centered, max width */}
-      <div style={{ padding: '0 100px' }} className="clients-track-outer">
+      {/* Track container — white pill, centered with wide margins */}
+      <div style={{ padding: '0 160px' }} className="clients-track-outer">
         <div
-          style={{ position: 'relative', overflow: 'hidden', borderRadius: 12 }}
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            borderRadius: 14,
+            backgroundColor: '#fff',
+            boxShadow: '0 2px 32px rgba(0,0,0,0.18)',
+          }}
           onMouseEnter={() => { pausedRef.current = true }}
           onMouseLeave={() => { pausedRef.current = false }}
         >
           {/* Left fade */}
-          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 80, background: 'linear-gradient(90deg, #fff 0%, transparent 100%)', zIndex: 2, pointerEvents: 'none', borderRadius: '12px 0 0 12px' }} />
+          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 80, background: 'linear-gradient(90deg, #fff 0%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
           {/* Right fade */}
-          <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 80, background: 'linear-gradient(270deg, #fff 0%, transparent 100%)', zIndex: 2, pointerEvents: 'none', borderRadius: '0 12px 12px 0' }} />
+          <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 80, background: 'linear-gradient(270deg, #fff 0%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
 
-          {/* Rail */}
+          {/* Rail — no background here, container provides it */}
           <div
             ref={railRef}
-            style={{ display: 'flex', gap: 0, willChange: 'transform', backgroundColor: '#fff', borderRadius: 12 }}
+            style={{ display: 'flex', willChange: 'transform' }}
           >
             {track.map((c, i) => (
               <div
@@ -88,11 +94,11 @@ export default function ClientsCarousel() {
                     maxWidth: '100%',
                     maxHeight: 72,
                     objectFit: 'contain',
-                    filter: 'grayscale(100%) opacity(0.45)',
+                    filter: 'grayscale(100%) opacity(0.4)',
                     transition: 'filter 0.4s ease',
                   }}
                   onMouseEnter={e => { e.currentTarget.style.filter = 'grayscale(0%) opacity(1)' }}
-                  onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) opacity(0.45)' }}
+                  onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) opacity(0.4)' }}
                 />
               </div>
             ))}
