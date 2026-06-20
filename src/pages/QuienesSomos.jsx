@@ -278,7 +278,7 @@ export default function QuienesSomos() {
       >
         {[
           { val: '8+', label: 'Años de experiencia' },
-          { val: '120+', label: 'Proyectos entregados' },
+          { val: '50+', label: 'Proyectos entregados' },
           { val: '100%', label: 'Clientes satisfechos' },
         ].map(({ val, label }) => (
           <div key={label} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 8 }}>
