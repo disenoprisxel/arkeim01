@@ -171,7 +171,7 @@ export default function QuienesSomos() {
         <div style={{ flex: '1 1 400px', position: 'relative', minHeight: 500 }}>
           <div style={{ width: '100%', height: 520, borderRadius: 4, overflow: 'hidden' }}>
             <img
-              src={ARCH2}
+              src="/qs-disenamos.png"
               alt="Estudio Arkeím"
               data-parallax="0.15"
               style={{ width: '100%', height: '120%', objectFit: 'cover', marginTop: '-10%' }}
