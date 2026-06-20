@@ -27,19 +27,19 @@ const services = [
     num: '03', tag: 'VISUALIZACIÓN', title: 'Visualización Arquitectónica',
     desc: 'Creamos representaciones visuales de alta calidad que dan vida al proyecto antes de construirlo. Renders fotorrealistas, recorridos virtuales y animaciones que permiten comunicar, vender y aprobar proyectos con total claridad.',
     points: ['Renders exteriores e interiores', 'Recorridos y tours virtuales 360°', 'Animaciones y videos arquitectónicos', 'Imágenes para marketing inmobiliario'],
-    img: ARCH4,
+    img: '/srv-visualizacion.png',
   },
   {
     num: '04', tag: 'LICENCIAS', title: 'Licencias de Construcción',
     desc: 'Gestionamos todos los trámites, permisos y documentación técnica requerida ante las entidades competentes para obtener las licencias de construcción, urbanismo y demás autorizaciones necesarias para ejecutar tu proyecto.',
     points: ['Radicación ante curaduría urbana', 'Gestión de licencias de construcción', 'Permisos de uso de suelo', 'Acompañamiento en visitas y revisiones'],
-    img: ARCH3,
+    img: '/srv-licencias.png',
   },
   {
     num: '05', tag: 'CONSTRUCCIÓN', title: 'Construcción',
     desc: 'Ejecutamos la obra con equipos especializados, procesos controlados y materiales certificados. La construcción es el paso final de un proceso integral que garantiza fidelidad al diseño, cumplimiento de plazos y estándares de calidad.',
     points: ['Gestión integral de obra', 'Control de calidad en sitio', 'Proveeduría y logística', 'Informes periódicos al cliente'],
-    img: ARCH3,
+    img: '/srv-construccion.png',
   },
 ]
 
