@@ -92,7 +92,7 @@ export default function ClientsCarousel() {
                   alt={c.alt}
                   style={{
                     maxWidth: '100%',
-                    maxHeight: 90,
+                    maxHeight: 108,
                     objectFit: 'contain',
                   }}
                 />
