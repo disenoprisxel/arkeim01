@@ -92,13 +92,9 @@ export default function ClientsCarousel() {
                   alt={c.alt}
                   style={{
                     maxWidth: '100%',
-                    maxHeight: 72,
+                    maxHeight: 90,
                     objectFit: 'contain',
-                    filter: 'grayscale(100%) opacity(0.4)',
-                    transition: 'filter 0.4s ease',
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.filter = 'grayscale(0%) opacity(1)' }}
-                  onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) opacity(0.4)' }}
                 />
               </div>
             ))}
