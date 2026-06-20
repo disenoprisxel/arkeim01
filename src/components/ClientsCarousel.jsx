@@ -50,51 +50,53 @@ export default function ClientsCarousel() {
         </h2>
       </div>
 
-      {/* Track wrapper — fade edges */}
-      <div
-        style={{ position: 'relative', overflow: 'hidden' }}
-        onMouseEnter={() => { pausedRef.current = true }}
-        onMouseLeave={() => { pausedRef.current = false }}
-      >
-        {/* Left fade */}
-        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 140, background: 'linear-gradient(90deg, #0A0A0A 0%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
-        {/* Right fade */}
-        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 140, background: 'linear-gradient(270deg, #0A0A0A 0%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
-
-        {/* Rail */}
+      {/* Track container — centered, max width */}
+      <div style={{ padding: '0 100px' }} className="clients-track-outer">
         <div
-          ref={railRef}
-          style={{ display: 'flex', gap: 0, willChange: 'transform' }}
+          style={{ position: 'relative', overflow: 'hidden', borderRadius: 12 }}
+          onMouseEnter={() => { pausedRef.current = true }}
+          onMouseLeave={() => { pausedRef.current = false }}
         >
-          {track.map((c, i) => (
-            <div
-              key={i}
-              style={{
-                flexShrink: 0,
-                width: 220,
-                height: 110,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '0 32px',
-                borderRight: '1px solid rgba(255,255,255,0.05)',
-              }}
-            >
-              <img
-                src={c.src}
-                alt={c.alt}
+          {/* Left fade */}
+          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 80, background: 'linear-gradient(90deg, #fff 0%, transparent 100%)', zIndex: 2, pointerEvents: 'none', borderRadius: '12px 0 0 12px' }} />
+          {/* Right fade */}
+          <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 80, background: 'linear-gradient(270deg, #fff 0%, transparent 100%)', zIndex: 2, pointerEvents: 'none', borderRadius: '0 12px 12px 0' }} />
+
+          {/* Rail */}
+          <div
+            ref={railRef}
+            style={{ display: 'flex', gap: 0, willChange: 'transform', backgroundColor: '#fff', borderRadius: 12 }}
+          >
+            {track.map((c, i) => (
+              <div
+                key={i}
                 style={{
-                  maxWidth: '100%',
-                  maxHeight: 64,
-                  objectFit: 'contain',
-                  filter: 'grayscale(100%) brightness(0.55)',
-                  transition: 'filter 0.4s ease',
+                  flexShrink: 0,
+                  width: 200,
+                  height: 120,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '0 28px',
+                  borderRight: '1px solid rgba(0,0,0,0.06)',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.filter = 'grayscale(0%) brightness(1)' }}
-                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(0.55)' }}
-              />
-            </div>
-          ))}
+              >
+                <img
+                  src={c.src}
+                  alt={c.alt}
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: 72,
+                    objectFit: 'contain',
+                    filter: 'grayscale(100%) opacity(0.45)',
+                    transition: 'filter 0.4s ease',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.filter = 'grayscale(0%) opacity(1)' }}
+                  onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) opacity(0.45)' }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -104,6 +106,7 @@ export default function ClientsCarousel() {
       <style>{`
         @media (max-width: 768px) {
           .clients-header { padding: 0 24px 40px !important; }
+          .clients-track-outer { padding: 0 24px !important; }
           .clients-divider { margin: 40px 24px 0 !important; }
         }
       `}</style>

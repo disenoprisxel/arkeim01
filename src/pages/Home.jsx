@@ -185,9 +185,8 @@ export default function Home() {
         <div style={{ maxWidth: 920, width: '100%', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 40 }} className="stats-row">
           {[
             { val: '8+', label: 'Años de experiencia' },
-            { val: '120+', label: 'Proyectos entregados' },
+            { val: '50+', label: 'Proyectos entregados' },
             { val: '100%', label: 'Clientes satisfechos' },
-            { val: '3', label: 'Premios nacionales' },
           ].map(({ val, label }, i) => (
             <RevealSection key={label} delay={i * 0.1} direction="up">
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'center' }}>
