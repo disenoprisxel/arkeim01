@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import RevealText from '../components/RevealText'
 import RevealSection from '../components/RevealSection'
 import SEO from '../components/SEO'
+import ClientsCarousel from '../components/ClientsCarousel'
 
 const HERO = '/hero.png'
 const ARCH1 = '/arch1.png'
@@ -346,7 +347,10 @@ export default function Home() {
         </RevealSection>
       </section>
 
-      {/* ── 08 CTA ── */}
+      {/* ── 08 CLIENTS ── */}
+      <ClientsCarousel />
+
+      {/* ── 09 CTA ── */}
       <section style={{ background: 'linear-gradient(180deg,#0A0A0A 0%,#141414 50%,#0A0A0A 100%)', padding: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 28 }} className="cta-section">
         <RevealText tag="h2" delay={0} style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 700, color: '#fff', letterSpacing: -1, textAlign: 'center', margin: 0 }}>
           ¿Tienes un proyecto en mente?
