@@ -21,10 +21,10 @@ const services = [
 ]
 
 const projects = [
-  { title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
-  { title: 'Edificio Zar Pro', cat: 'Comercial', img: ARCH3 },
-  { title: 'Centro Cultural Llana', cat: 'Institucional', img: ARCH4 },
-  { title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
+  { id: 'remoto-living', title: 'Remoto Living', cat: 'Residencial', img: '/projects/remoto-living/hero.png' },
+  { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: ARCH3 },
+  { id: 'we-live-78', title: 'We Live 78', cat: 'Comercial', img: ARCH3 },
+  { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', img: ARCH2 },
 ]
 
 const process = [
@@ -248,7 +248,7 @@ export default function Home() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
           {projects.map((p, i) => (
             <RevealSection key={p.title} delay={i * 0.1} direction="up">
-              <Link to="/proyectos/casa-montes" style={{ textDecoration: 'none', display: 'block', position: 'relative', borderRadius: 4, overflow: 'hidden' }}>
+              <Link to={`/proyectos/${p.id}`} style={{ textDecoration: 'none', display: 'block', position: 'relative', borderRadius: 4, overflow: 'hidden' }}>
                 <div style={{ position: 'relative', paddingTop: '70%', overflow: 'hidden' }}>
                   <img
                     src={p.img}
