@@ -15,23 +15,39 @@ const projectsData = {
   'we-live-78': {
     title: 'We Live 78',
     cat: 'Comercial',
-    location: 'Bogotá, Colombia',
+    location: 'Bogotá D.C., Colombia',
     year: '2025',
     hero: ARCH3,
-    desc: 'Edificio de uso mixto ubicado sobre la Calle 78 en Bogotá, concebido como un nodo de vida urbana que integra vivienda, oficinas y comercio en un solo volumen articulado. La propuesta responde al carácter dinámico del corredor vial con una fachada activa en planta baja y apartamentos de alto estándar en los niveles superiores.',
-    challenge: 'Resolver la convivencia de usos residenciales y comerciales en un mismo edificio sin comprometer la privacidad ni la calidad de vida de los residentes, en un lote de frente reducido sobre una vía de alto tráfico.',
-    solution: 'Se separó verticalmente el programa: comercio y coworking en los primeros tres niveles con acceso independiente desde la calle, y las unidades residenciales a partir del cuarto piso con lobby propio, logrando autonomía total entre los usos.',
+    desc: [
+      'We Live 78 es un proyecto de uso mixto que integra comercio, servicios básicos y vivienda colectiva en un edificio de 6 niveles con cubierta transitable, desarrollado sobre una superficie construida de 979,46 m².',
+      'El proyecto responde a una visión contemporánea de ciudad compacta, donde la mezcla de usos permite activar el espacio urbano, optimizar el suelo disponible y generar dinámicas de habitabilidad más eficientes y sostenibles. Su configuración vertical articula de manera estratégica las áreas comerciales en los primeros niveles y las unidades residenciales en los superiores, garantizando funcionalidad, confort y aprovechamiento máximo del predio.',
+    ],
+    challenge: [
+      'El principal reto del proyecto consistió en equilibrar la complejidad de un edificio de uso mixto en un área construida reducida, integrando de manera eficiente los requerimientos normativos, funcionales y técnicos de cada uso.',
+      'La convivencia entre comercio, servicios y vivienda exigía una coordinación precisa entre sistemas estructurales, arquitectónicos y técnicos, asegurando independencia operativa sin perder coherencia espacial y constructiva. Adicionalmente, el proceso de trámite de licencia requería una documentación técnica clara, consistente y altamente organizada para garantizar una aprobación eficiente del proyecto.',
+    ],
+    solution: [
+      'Arkeim participó activamente en las fases de diseño, modelado BIM, coordinación interdisciplinaria y organización de la documentación técnica para el trámite de licencia de construcción.',
+      'A través de un proceso colaborativo basado en metodologías BIM, se desarrolló un modelo digital integral que permitió anticipar interferencias, optimizar decisiones de diseño y garantizar la compatibilidad entre arquitectura, estructura y sistemas técnicos.',
+      'Como resultado, se consolidó un modelo coordinado y una documentación técnica robusta, que fortaleció la precisión del proyecto, redujo incertidumbres en etapas posteriores y aportó eficiencia al proceso de radicación de licencia, asegurando mayor confiabilidad y control en cada fase del desarrollo.',
+    ],
+    results: [
+      'We Live 78 cuenta con una base técnica y digital sólida que permitió desarrollar un proyecto de uso mixto de manera organizada, eficiente y preparada para las siguientes etapas de ejecución.',
+      'Gracias a la integración entre diseño, modelado BIM y coordinación interdisciplinaria, fue posible identificar y resolver posibles conflictos antes de construir, optimizando tiempos, reduciendo errores y evitando costos asociados a cambios inesperados.',
+      'La documentación técnica desarrollada facilita el proceso de licenciamiento y proporciona una mayor claridad en la toma de decisiones, permitiendo que todas las disciplinas trabajen de forma coordinada y bajo una misma visión del proyecto.',
+      'Este proyecto demuestra cómo Arkeim ayuda a transformar procesos complejos en soluciones claras, brindando a propietarios, desarrolladores e inversionistas un mayor control, menos incertidumbre y la confianza de avanzar con un proyecto bien planificado desde el inicio.',
+    ],
     model3d: '/models/we-live-78.glb',
     img1: ARCH1,
     fullImg: ARCH4,
     gallery: [ARCH3, ARCH1, ARCH4, ARCH2],
     details: [
-      { label: 'Ubicación', val: 'Calle 78, Bogotá' },
+      { label: 'Ubicación', val: 'Bogotá D.C., Colombia' },
       { label: 'Año', val: '2025' },
-      { label: 'Área total', val: '2.850 m²' },
-      { label: 'Pisos', val: '10 niveles + sótano' },
-      { label: 'Estado', val: 'Diseño arquitectónico' },
-      { label: 'Tipo', val: 'Uso mixto · Vivienda y comercio' },
+      { label: 'Área construida', val: '979,46 m²' },
+      { label: 'Tipología', val: 'Edificio de uso mixto (vivienda colectiva + comercio y servicios básicos)' },
+      { label: 'Programa', val: '20 unidades de vivienda + comercio + equipamientos comunales' },
+      { label: 'Alcance', val: 'Diseño arquitectónico – Coordinación BIM – Radicación licencia de construcción' },
     ],
     related: [
       { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: ARCH3 },
@@ -249,7 +265,7 @@ export default function ProyectoTemplate() {
       <SEO
         title={p.title}
         path={`/proyectos/${id}`}
-        description={`${p.title} — Proyecto ${p.cat} de Arkeím Studio en ${p.location}. ${p.desc.slice(0, 120)}...`}
+        description={`${p.title} — Proyecto ${p.cat} de Arkeím Studio en ${p.location}. ${(Array.isArray(p.desc) ? p.desc[0] : p.desc).slice(0, 120)}...`}
         image={`https://www.arkeimstudio.com${p.hero}`}
       />
       <Navbar />
@@ -395,7 +411,11 @@ export default function ProyectoTemplate() {
               <div style={{ width: 3, height: 22, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
               <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 20, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.3 }}>Sobre el proyecto</h3>
             </div>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {(Array.isArray(p.desc) ? p.desc : [p.desc]).map((par, i) => (
+                <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{par}</p>
+              ))}
+            </div>
           </div>
 
           {/* CTA */}
