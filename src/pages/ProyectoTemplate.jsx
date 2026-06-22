@@ -45,9 +45,22 @@ const projectsData = {
     location: 'Bogotá, Colombia',
     year: '2025',
     hero: '/projects/remoto-living/hero.png',
-    desc: 'Remoto Living es un proyecto de vivienda colectiva orientado al nuevo estilo de vida del trabajo remoto. Cada apartamento se diseñó como una unidad autónoma con zonas de trabajo integradas, complementadas por amenidades compartidas de alto estándar: coworking, gimnasio, piscina y terrazas sociales que fomentan la comunidad entre residentes.',
-    challenge: 'Integrar en un único edificio residencial las necesidades del trabajo desde casa sin sacrificar la calidad habitacional ni la privacidad, y al mismo tiempo generar espacios colectivos que motiven la interacción social.',
-    solution: 'Se desarrolló un programa mixto que concentra las amenidades compartidas en las plantas bajas y la terraza, liberando las unidades residenciales como espacios exclusivamente domésticos con alcobas, salas y terrazas privadas de alta calidad.',
+    desc: 'Remoto Living surge como la evolución de Terrazas Tayrona, consolidando una visión arquitectónica que combina vivienda, comercio y espacios de encuentro en una sola propuesta urbana. El proyecto plantea una arquitectura contemporánea enfocada en el bienestar, la funcionalidad y la integración de usos, creando un entorno que fortalece la vida comunitaria y aporta valor al desarrollo de Santa Marta.',
+    challenge: [
+      'La segunda etapa de Terrazas Tayrona planteó el reto de integrarse de manera coherente a un proyecto existente, garantizando la continuidad arquitectónica, funcional y urbana del conjunto. La propuesta debía responder a nuevas necesidades residenciales y comerciales sin perder la identidad del desarrollo original, optimizando simultáneamente el aprovechamiento del predio y el cumplimiento de los requisitos normativos exigidos para su viabilidad.',
+      'Adicionalmente, la complejidad inherente a un edificio de uso mixto demandaba una coordinación precisa entre múltiples disciplinas de diseño, asegurando la compatibilidad de todos los sistemas que conforman el proyecto y reduciendo potenciales conflictos durante las etapas posteriores de desarrollo y construcción.',
+    ],
+    solution: [
+      'Arkeim participó activamente en el desarrollo del proyecto, aportando no solo al modelado BIM, sino también al proceso de diseño arquitectónico, la coordinación interdisciplinaria y la consolidación de la documentación técnica.',
+      'A través de entornos colaborativos de trabajo, el equipo intervino desde etapas tempranas del diseño, apoyando la toma de decisiones y garantizando la coherencia entre arquitectura, estructura y sistemas técnicos (MEP). Este proceso permitió anticipar interferencias, optimizar soluciones y fortalecer la calidad del diseño antes de su materialización.',
+      'Como resultado, se obtuvo un modelo digital totalmente coordinado y una documentación técnica consistente, lista para procesos de radicación de licencia de construcción, aportando mayor precisión, trazabilidad y confiabilidad al proyecto, desde el diseño hasta su validación técnica.',
+    ],
+    results: [
+      'Remoto Living evolucionó de una idea a un proyecto sólido, organizado y preparado para avanzar con seguridad hacia su desarrollo y construcción.',
+      'La participación de Arkeim permitió integrar una nueva etapa al proyecto existente de forma coherente, garantizando que cada decisión arquitectónica, técnica y normativa trabajara en conjunto desde el inicio. Esto se traduce en menos imprevistos, una mejor planificación y una mayor confianza durante todo el proceso.',
+      'El proyecto cuenta con una documentación clara y una base técnica confiable que facilita la gestión de la licencia, agiliza la toma de decisiones y reduce los riesgos asociados a cambios de última hora.',
+      'Más que desarrollar un modelo o producir documentación, Arkeim ayudó a convertir una visión de crecimiento en un proyecto viable, ordenado y listo para materializarse de manera eficiente, permitiendo a sus clientes avanzar con mayor tranquilidad, control y seguridad.',
+    ],
     model3d: '/models/remoto-living.glb',
     video: '/projects/remoto-living/interior.mp4',
     img1: '/projects/remoto-living/coworking.png',
@@ -392,15 +405,36 @@ export default function ProyectoTemplate() {
                 <div style={{ width: 3, height: 18, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
                 <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>El desafío</h4>
               </div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0, paddingLeft: 13 }}>{p.challenge}</p>
+              <div style={{ paddingLeft: 13, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {(Array.isArray(p.challenge) ? p.challenge : [p.challenge]).map((par, i) => (
+                  <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{par}</p>
+                ))}
+              </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <div style={{ width: 3, height: 18, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
                 <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>La solución</h4>
               </div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0, paddingLeft: 13 }}>{p.solution}</p>
+              <div style={{ paddingLeft: 13, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {(Array.isArray(p.solution) ? p.solution : [p.solution]).map((par, i) => (
+                  <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{par}</p>
+                ))}
+              </div>
             </div>
+            {p.results && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 3, height: 18, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
+                  <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>Resultados</h4>
+                </div>
+                <div style={{ paddingLeft: 13, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {(Array.isArray(p.results) ? p.results : [p.results]).map((par, i) => (
+                    <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{par}</p>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* CTA */}
