@@ -369,9 +369,9 @@ export default function ProyectoTemplate() {
               <div style={{ height: 1, flex: 1, background: 'linear-gradient(270deg, #B91C1C, transparent)' }} />
             </div>
             {p.details.map(d => (
-              <div key={d.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', paddingBottom: 10, borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: 'rgba(255,255,255,0.35)', letterSpacing: 2, textTransform: 'uppercase' }}>{d.label}</span>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#fff', fontWeight: 500 }}>{d.val}</span>
+              <div key={d.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 24, paddingBottom: 10, borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: 'rgba(255,255,255,0.35)', letterSpacing: 2, textTransform: 'uppercase', flexShrink: 0, paddingTop: 2 }}>{d.label}</span>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#fff', fontWeight: 500, textAlign: 'right' }}>{d.val}</span>
               </div>
             ))}
           </div>
