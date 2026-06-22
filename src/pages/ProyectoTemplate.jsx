@@ -193,12 +193,29 @@ const projectsData = {
   'condominio-jaguey': {
     title: 'Condominio El Jagüey',
     cat: 'Residencial',
-    location: 'Cundinamarca, Colombia',
-    year: '2025',
+    location: 'Yopal, Colombia',
+    year: '2024',
     hero: ARCH2,
-    desc: 'Condominio campestre de vivienda unifamiliar en el municipio de La Mesa, Cundinamarca. El proyecto propone dos tipologías de vivienda que responden a la topografía del terreno, integrando espacios de convivencia, zonas verdes y visuales hacia el paisaje natural circundante.',
-    challenge: 'Diseñar dos tipologías de vivienda diferenciadas que compartan infraestructura común, respetando la topografía natural del lote y maximizando las visuales hacia el paisaje.',
-    solution: 'Se desarrollaron dos prototipos con volumetrías complementarias: Casa 1 de carácter compacto y Casa 2 de disposición longitudinal, ambas organizadas alrededor de patios y terrazas que conectan el interior con el entorno natural.',
+    desc: [
+      'El Condominio El Jaguey es un desarrollo urbanístico de aproximadamente 49.000 m², concebido como un ecosistema integral que combina eco vivienda, comercio, servicios y posada turística en un mismo entorno. El proyecto se estructura en tres grandes componentes funcionales, articulados para generar un equilibrio entre habitabilidad, actividad económica y turismo sostenible.',
+      'Su planteamiento urbanístico busca consolidar un modelo de crecimiento ordenado, donde la naturaleza, la vivienda y la actividad productiva conviven en armonía, respondiendo a las dinámicas contemporáneas de desarrollo responsable y uso eficiente del suelo.',
+    ],
+    challenge: [
+      'El principal reto del proyecto consistió en estructurar un desarrollo de gran escala con múltiples usos simultáneos —residencial ecológico, comercio y servicios turísticos— garantizando coherencia urbana, eficiencia funcional y viabilidad normativa.',
+      'Adicionalmente, fue necesario traducir una visión arquitectónica inicial en un sistema técnico constructivo claro, capaz de soportar procesos de licenciamiento urbanístico y de construcción, integrando criterios de ordenamiento, densidad, accesibilidad y conexión entre los diferentes grupos del proyecto.',
+      'El desafío también implicó coordinar múltiples componentes técnicos sin perder la identidad del proyecto ni su enfoque sostenible.',
+    ],
+    solution: [
+      'Desde Arkeim, se intervino en la fase de diseño arquitectónico y urbanístico en AutoCAD, desarrollando la base técnica del proyecto y su organización espacial integral. Posteriormente, se avanzó en el modelado y coordinación BIM, permitiendo una visión más precisa, interoperable y controlada del conjunto del desarrollo.',
+      'Se elaboró la propuesta de tipologías de vivienda (casas tipo) y se estructuró la documentación técnica necesaria para los trámites de licencia urbanística y de construcción, asegurando coherencia entre diseño, normativa y factibilidad constructiva.',
+      'El resultado es una propuesta sólida, ordenada y técnicamente verificable, que facilita la transición del diseño conceptual hacia su materialización, manteniendo la visión integral del Condominio El Jaguey como un proyecto sostenible, funcional y de alto valor urbano.',
+    ],
+    results: [
+      'Condominio El Jaguey pasó de ser una visión de desarrollo a gran escala a un proyecto estructurado, organizado y preparado para avanzar con seguridad hacia las siguientes etapas de licenciamiento y ejecución.',
+      'La participación de Arkeim permitió integrar vivienda, comercio, servicios y espacios turísticos bajo una misma estrategia, garantizando que cada componente funcionara de manera coherente y aportara valor al conjunto del proyecto.',
+      'Gracias a esta planificación, el proyecto cuenta con una base técnica sólida que facilita la toma de decisiones, reduce la incertidumbre y permite avanzar con mayor claridad en su desarrollo futuro.',
+      'Más allá del diseño, Arkeim ayudó a transformar una idea ambiciosa en un proyecto viable, sostenible y listo para convertirse en una realidad, brindando a sus promotores una mayor confianza para materializar su visión a largo plazo.',
+    ],
     models: [
       { label: 'Casa 1', src: '/models/jaguey-casa-1.glb' },
       { label: 'Casa 2', src: '/models/jaguey-casa-2.glb' },
@@ -207,12 +224,12 @@ const projectsData = {
     fullImg: ARCH3,
     gallery: [ARCH2, ARCH1, ARCH3, ARCH4],
     details: [
-      { label: 'Ubicación', val: 'La Mesa, Cundinamarca' },
-      { label: 'Año', val: '2025' },
-      { label: 'Área Casa 1', val: '180 m²' },
-      { label: 'Área Casa 2', val: '240 m²' },
-      { label: 'Estado', val: 'Diseño arquitectónico' },
-      { label: 'Tipo', val: 'Residencial · Condominio campestre' },
+      { label: 'Ubicación', val: 'Yopal, Colombia' },
+      { label: 'Año', val: '2024' },
+      { label: 'Área total', val: '49.000 m²' },
+      { label: 'Tipología', val: 'Urbanismo residencial multifamiliar, con equipamientos comunales y áreas de servicios' },
+      { label: 'Programa', val: '130 unidades de vivienda + áreas comunales + área comercial y servicios complementarios' },
+      { label: 'Alcance', val: 'Participación en la fase de diseño arquitectónico y urbanístico en AutoCAD, modelado y coordinación BIM, desarrollo de propuesta de casas tipo y organización de documentación técnica para trámite de licencia urbanística y de construcción' },
     ],
     related: [
       { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
