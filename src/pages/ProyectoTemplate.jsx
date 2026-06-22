@@ -398,45 +398,6 @@ export default function ProyectoTemplate() {
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
           </div>
 
-          {/* Desafío & solución */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ width: 3, height: 18, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
-                <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>El desafío</h4>
-              </div>
-              <div style={{ paddingLeft: 13, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {(Array.isArray(p.challenge) ? p.challenge : [p.challenge]).map((par, i) => (
-                  <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{par}</p>
-                ))}
-              </div>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ width: 3, height: 18, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
-                <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>La solución</h4>
-              </div>
-              <div style={{ paddingLeft: 13, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {(Array.isArray(p.solution) ? p.solution : [p.solution]).map((par, i) => (
-                  <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{par}</p>
-                ))}
-              </div>
-            </div>
-            {p.results && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <div style={{ width: 3, height: 18, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
-                  <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>Resultados</h4>
-                </div>
-                <div style={{ paddingLeft: 13, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                  {(Array.isArray(p.results) ? p.results : [p.results]).map((par, i) => (
-                    <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, margin: 0 }}>{par}</p>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
           {/* CTA */}
           <Link to="/contacto" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 500, color: '#fff', textDecoration: 'none', backgroundColor: '#B91C1C', padding: '12px 24px', borderRadius: 2, textAlign: 'center', display: 'block', transition: 'opacity 0.2s' }}
             onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
@@ -445,6 +406,53 @@ export default function ProyectoTemplate() {
           </Link>
         </div>
       </section>
+
+      {/* ── DESAFÍO / SOLUCIÓN / RESULTADOS (full-width) ── */}
+      {(p.challenge || p.solution || p.results) && (
+        <section style={{ backgroundColor: '#0A0A0A', padding: '72px 100px', borderTop: '1px solid rgba(255,255,255,0.05)' }} className="proj-narrative">
+          <div style={{ display: 'grid', gridTemplateColumns: `repeat(${[p.challenge, p.solution, p.results].filter(Boolean).length}, 1fr)`, gap: 48, alignItems: 'start' }}>
+            {p.challenge && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 3, height: 20, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
+                  <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 18, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>El desafío</h4>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {(Array.isArray(p.challenge) ? p.challenge : [p.challenge]).map((par, i) => (
+                    <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{par}</p>
+                  ))}
+                </div>
+              </div>
+            )}
+            {p.solution && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 3, height: 20, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
+                  <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 18, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>La solución</h4>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {(Array.isArray(p.solution) ? p.solution : [p.solution]).map((par, i) => (
+                    <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{par}</p>
+                  ))}
+                </div>
+              </div>
+            )}
+            {p.results && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 3, height: 20, backgroundColor: '#B91C1C', borderRadius: 2, flexShrink: 0 }} />
+                  <h4 style={{ fontFamily: 'Syne, sans-serif', fontSize: 18, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: -0.2 }}>Resultados</h4>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {(Array.isArray(p.results) ? p.results : [p.results]).map((par, i) => (
+                    <p key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{par}</p>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* ── FULL IMAGE 1 ── */}
       <div style={{ overflow: 'hidden', height: 600 }}>
