@@ -62,12 +62,12 @@ const projectsData = {
       '/projects/remoto-living/interior-003.jpg',
     ],
     details: [
-      { label: 'Ubicación', val: 'Bogotá, Colombia' },
-      { label: 'Año', val: '2025' },
-      { label: 'Área total', val: '4.800 m²' },
-      { label: 'Unidades', val: '48 apartamentos' },
-      { label: 'Estado', val: 'Diseño arquitectónico' },
-      { label: 'Tipo', val: 'Residencial · Vivienda colectiva' },
+      { label: 'Ubicación', val: 'Santa Marta, Colombia' },
+      { label: 'Año', val: '2024' },
+      { label: 'Área construida', val: '1.163,61 m²' },
+      { label: 'Tipología', val: 'Edificio de uso mixto (vivienda multifamiliar + comercio)' },
+      { label: 'Programa', val: '20 unidades de vivienda + comercio y servicios comunales' },
+      { label: 'Alcance', val: 'Diseño arquitectónico – Coordinación BIM – Radicación licencia de construcción' },
     ],
     related: [
       { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
