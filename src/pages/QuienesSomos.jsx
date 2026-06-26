@@ -10,16 +10,34 @@ const ARCH2 = '/arch2.png'
 
 const values = [
   {
-    title: 'Criterio Técnico',
-    desc: 'Aplicamos rigor estructural y normativo en cada fase del proyecto, garantizando seguridad y durabilidad.',
+    title: 'Precisión técnica',
+    desc: 'Desarrollamos proyectos cuidadosamente planificados, donde cada decisión responde a criterios arquitectónicos, funcionales y constructivos.',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+      </svg>
+    ),
   },
   {
-    title: 'Visión Integral',
-    desc: 'Entendemos el diseño, la construcción y la visualización como un proceso continuo y coherente.',
+    title: 'Visión integral',
+    desc: 'Integramos arquitectura, diseño y construcción en un proceso coordinado que aporta coherencia y continuidad en cada etapa.',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
+        <line x1="12" y1="2" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="22"/>
+        <line x1="2" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="22" y2="12"/>
+      </svg>
+    ),
   },
   {
-    title: 'Compromiso',
-    desc: 'Acompañamos al cliente desde la primera idea hasta la entrega final, con comunicación transparente.',
+    title: 'Acompañamiento profesional',
+    desc: 'Construimos relaciones basadas en la confianza, acompañando a nuestros clientes desde la idea inicial hasta la materialización del proyecto.',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    ),
   },
 ]
 
@@ -214,7 +232,7 @@ export default function QuienesSomos() {
               margin: 0,
             }}
           >
-            Valores que nos definen
+            ¿Por qué elegir Arkeím?
           </h2>
         </div>
 
@@ -238,6 +256,7 @@ export default function QuienesSomos() {
                 borderTop: '3px solid #B91C1C',
               }}
             >
+              {v.icon}
               <h3
                 style={{
                   fontFamily: 'Syne, sans-serif',
