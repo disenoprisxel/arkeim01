@@ -28,10 +28,10 @@ const projects = [
 ]
 
 const process = [
-  { n: '01', title: 'Briefing', desc: 'Escuchamos tus necesidades y definimos los objetivos del proyecto.' },
-  { n: '02', title: 'Diseño', desc: 'Desarrollamos propuestas creativas alineadas con el contexto y el programa.' },
-  { n: '03', title: 'Construcción', desc: 'Ejecutamos la obra con precisión, supervisando cada etapa del proceso.' },
-  { n: '04', title: 'Entrega', desc: 'Finalizamos con atención al detalle y acompañamiento post-entrega.' },
+  { n: '01', title: 'Entendemos el proyecto antes de diseñarlo', desc: 'Cada proyecto comienza escuchando y comprendiendo las necesidades, objetivos y expectativas de nuestros clientes. Analizamos el contexto y los detalles necesarios para construir una propuesta coherente y bien fundamentada desde el inicio.' },
+  { n: '02', title: 'Diseñamos con una visión integral', desc: 'Integramos arquitectura, diseño, visualización y criterios técnicos en un mismo proceso de trabajo, logrando que cada decisión aporte valor y mantenga una línea clara durante el desarrollo del proyecto.' },
+  { n: '03', title: 'Coordinamos cada detalle con precisión', desc: 'Trabajamos de forma organizada y metódica para garantizar que todos los elementos del proyecto estén alineados, reduciendo imprevistos y asegurando un desarrollo preciso y bien estructurado.' },
+  { n: '04', title: 'Acompañamos el proyecto hasta su materialización', desc: 'Mantenemos un seguimiento continuo en cada etapa, ofreciendo acompañamiento profesional y asegurando que la visión inicial se conserve hasta la entrega final.' },
 ]
 
 const whyPoints = [
@@ -276,7 +276,7 @@ export default function Home() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 500, color: '#B91C1C', letterSpacing: 6, textTransform: 'uppercase' }}>Proceso</span>
             <RevealText tag="h2" delay={0.1} style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(32px, 3.5vw, 48px)', fontWeight: 700, color: '#0A0A0A', letterSpacing: -1, margin: 0 }}>
-              Cómo trabajamos
+              Cómo transformamos cada proyecto
             </RevealText>
           </div>
         </RevealSection>
