@@ -272,34 +272,6 @@ const projectsData = {
       { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: '/projects/edificio-altamira/hero.png' },
     ],
   },
-  'casa-montes': {
-    title: 'Casa Montes',
-    cat: 'Residencial',
-    location: 'Bogotá, Colombia',
-    year: '2024',
-    area: '480 m²',
-    status: 'Construido',
-    hero: ARCH2,
-    desc: 'Casa Montes es una residencia unifamiliar ubicada en el norte de Bogotá que responde al entorno forestal de su lote con una arquitectura que equilibra privacidad, luz natural y conexión con el jardín. El programa se articula en tres volúmenes que generan patios intermedios, controlando la entrada de luz y ventilación de manera pasiva.',
-    challenge: 'El principal reto fue integrar un programa de 480 m² en un lote de pendiente pronunciada, minimizando el movimiento de tierra y preservando los árboles existentes.',
-    solution: 'Optamos por una planta escalonada que sigue la topografía natural, con terrazas ajardinadas que actúan como extensión de los espacios interiores.',
-    img1: ARCH1,
-    fullImg: ARCH3,
-    gallery: [ARCH2, ARCH4, ARCH1, ARCH3],
-    details: [
-      { label: 'Cliente', val: 'Familia Montes' },
-      { label: 'Ubicación', val: 'Bogotá, Colombia' },
-      { label: 'Año', val: '2024' },
-      { label: 'Área', val: '480 m²' },
-      { label: 'Estado', val: 'Construido' },
-      { label: 'Tipo', val: 'Residencial' },
-    ],
-    related: [
-      { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
-      { id: 'vivienda-buba', title: 'Vivienda Buba', cat: 'Residencial', img: ARCH2 },
-      { id: 'edificio-zar', title: 'Edificio Zar Pro', cat: 'Comercial', img: ARCH3 },
-    ],
-  },
 }
 
 const defaultProject = {
@@ -307,8 +279,6 @@ const defaultProject = {
   cat: 'Residencial',
   location: 'Bogotá, Colombia',
   year: '2024',
-  area: '350 m²',
-  status: 'Construido',
   hero: ARCH2,
   desc: 'Un proyecto que combina rigor técnico y sensibilidad estética para crear espacios que responden a las personas y al entorno.',
   challenge: 'Diseñar un espacio que integre los requerimientos del cliente con las condiciones del lugar.',
@@ -316,18 +286,11 @@ const defaultProject = {
   img1: ARCH1,
   fullImg: ARCH3,
   gallery: [ARCH2, ARCH4, ARCH1, ARCH3],
-  details: [
-    { label: 'Cliente', val: 'Cliente Privado' },
-    { label: 'Ubicación', val: 'Bogotá, Colombia' },
-    { label: 'Año', val: '2024' },
-    { label: 'Área', val: '350 m²' },
-    { label: 'Estado', val: 'Construido' },
-    { label: 'Tipo', val: 'Residencial' },
-  ],
+  details: [],
   related: [
-    { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
-    { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
-    { id: 'edificio-zar', title: 'Edificio Zar Pro', cat: 'Comercial', img: ARCH3 },
+    { id: 'we-live-78', title: 'We Live 78', cat: 'Comercial', img: '/projects/we-live-78/hero.png' },
+    { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: '/projects/edificio-calle-53/hero.png' },
+    { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: '/projects/edificio-altamira/hero.png' },
   ],
 }
 

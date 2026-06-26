@@ -17,15 +17,9 @@ const projects = [
   { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', year: '2023', location: 'Bogotá D.C.', img: '/projects/edificio-altamira/hero.png', desc: 'Edificio residencial multifamiliar en tres torres con diseño arquitectónico y modelo BIM as-built.' },
   { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', year: '2025', location: 'Bogotá D.C.', img: '/projects/edificio-calle-53/hero.png', desc: 'Edificio de uso mixto con vivienda colectiva en zona de interés patrimonial. Coordinación BIM y licencia de construcción.' },
   { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', year: '2024', location: 'Yopal', img: '/projects/condominio-jaguey/hero.png', desc: 'Urbanismo residencial de 49.000 m² con vivienda, comercio y posada turística en Yopal.' },
-  { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', year: '2024', location: 'Bogotá', img: ARCH2, desc: 'Residencia unifamiliar en el norte de Bogotá con énfasis en la conexión interior-exterior y materiales naturales.' },
-  { id: 'edificio-zar', title: 'Edificio Zar Pro', cat: 'Comercial', year: '2023', location: 'Medellín', img: ARCH3, desc: 'Torre de oficinas de 12 pisos con fachada ventilada y espacios colaborativos de alto rendimiento.' },
-  { id: 'centro-cultural', title: 'Centro Cultural Llana', cat: 'Institucional', year: '2023', location: 'Cali', img: ARCH4, desc: 'Centro cultural comunitario diseñado para integrar arte, formación y espacio público en un barrio periférico.' },
-  { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', year: '2022', location: 'Bogotá', img: ARCH1, desc: 'Remodelación de loft en zona histórica con conservación de estructura original y diseño contemporáneo.' },
-  { id: 'tipsa-nogal', title: 'Tipsa Nogal', cat: 'Comercial', year: '2022', location: 'Bogotá', img: ARCH3, desc: 'Sede corporativa de 3.000 m² con espacios de trabajo abiertos, zonas de descanso y terraza verde.' },
-  { id: 'vivienda-buba', title: 'Vivienda Buba', cat: 'Residencial', year: '2021', location: 'Barranquilla', img: ARCH2, desc: 'Conjunto de 8 viviendas de interés prioritario con sistemas pasivos de ventilación y materiales locales.' },
 ]
 
-const cats = ['Todos', 'Residencial', 'Comercial', 'Institucional']
+const cats = ['Todos', 'Residencial', 'Comercial']
 
 export default function Proyectos() {
   const [active, setActive] = useState('Todos')
