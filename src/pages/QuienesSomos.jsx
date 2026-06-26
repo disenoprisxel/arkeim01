@@ -319,99 +319,85 @@ export default function QuienesSomos() {
         }}
         className="team-section"
       >
+        {/* Header */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          <span
-            style={{
-              fontFamily: 'DM Sans, sans-serif',
-              fontSize: 11,
-              fontWeight: 500,
-              color: '#B91C1C',
-              letterSpacing: 6,
-              textTransform: 'uppercase',
-            }}
-          >
-            Equipo
+          <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 500, color: '#B91C1C', letterSpacing: 6, textTransform: 'uppercase' }}>
+            Estudio
           </span>
-          <h2
-            style={{
-              fontFamily: 'Syne, sans-serif',
-              fontSize: 'clamp(28px, 3vw, 40px)',
-              fontWeight: 700,
-              color: '#0A0A0A',
-              letterSpacing: -1,
-              margin: 0,
-            }}
-          >
-            Las personas detrás de Arkeím
+          <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 700, color: '#0A0A0A', letterSpacing: -1, margin: 0, lineHeight: 1.15 }}>
+            Detrás de Arkeím, una arquitectura<br />con dirección personalizada.
           </h2>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#6B7280', lineHeight: 1.7, maxWidth: 520, margin: 0 }}>
+            En Arkeím, cada proyecto se desarrolla con una mirada cercana, estratégica y altamente personalizada. Acompaño de forma directa cada etapa del proceso: desde la idea inicial y el diseño, hasta la coordinación técnica y la materialización del proyecto.
+          </p>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: 24,
-          }}
-        >
-          {team.map(t => (
-            <div
-              key={t.name}
-              style={{
-                backgroundColor: '#fff',
-                borderRadius: 4,
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div
-                style={{
-                  height: 220,
-                  backgroundColor: '#E8E6E1',
-                  backgroundImage: `url(${ARCH2})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              <div style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <h3
-                  style={{
-                    fontFamily: 'Syne, sans-serif',
-                    fontSize: 20,
-                    fontWeight: 700,
-                    color: '#0A0A0A',
-                    margin: 0,
-                  }}
-                >
-                  {t.name}
-                </h3>
-                <span
-                  style={{
-                    fontFamily: 'DM Sans, sans-serif',
-                    fontSize: 12,
-                    fontWeight: 500,
-                    color: '#B91C1C',
-                    letterSpacing: 2,
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {t.role}
-                </span>
-                <p
-                  style={{
-                    fontFamily: 'DM Sans, sans-serif',
-                    fontSize: 14,
-                    color: '#6B7280',
-                    lineHeight: 1.6,
-                    marginTop: 4,
-                  }}
-                >
-                  {t.desc}
-                </p>
+        {/* Pillars grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}>
+          {[
+            { icon: '👤', title: 'Atención directa', desc: 'Trato contigo de principio a fin, sin intermediarios.' },
+            { icon: '✏️', title: 'Diseño a medida', desc: 'Cada proyecto responde al lugar, al presupuesto y a la forma de habitar.' },
+            { icon: '📐', title: 'Visión integral', desc: 'Diseño, criterio técnico y visualización arquitectónica en un mismo proceso.' },
+            { icon: '🤝', title: 'Acompañamiento real', desc: 'Seguimiento cercano en cada etapa para tomar decisiones con claridad.' },
+          ].map(p => (
+            <div key={p.title} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+              <span style={{ fontSize: 22, lineHeight: 1, marginTop: 2 }}>{p.icon}</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                <span style={{ fontFamily: 'Syne, sans-serif', fontSize: 15, fontWeight: 700, color: '#0A0A0A' }}>{p.title}</span>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#6B7280', lineHeight: 1.5 }}>{p.desc}</span>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Founder card */}
+        <div style={{ backgroundColor: '#fff', borderRadius: 4, overflow: 'hidden', display: 'flex', flexWrap: 'wrap' }}>
+          {/* Photo */}
+          <div style={{ flex: '0 0 400px', minHeight: 500 }}>
+            <img src="/arquitecto.jpg" alt="Yilmer Martínez" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
+          </div>
+
+          {/* Info */}
+          <div style={{ flex: 1, minWidth: 280, padding: '52px 52px', display: 'flex', flexDirection: 'column', gap: 28, justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 32, fontWeight: 700, color: '#0A0A0A', margin: 0, letterSpacing: -0.5 }}>Yilmer Martínez</h3>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 500, color: '#B91C1C', letterSpacing: 3, textTransform: 'uppercase' }}>Arquitecto · Fundador de Arkeím</span>
+              <div style={{ width: 40, height: 2, backgroundColor: '#B91C1C', marginTop: 4 }} />
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
+                Arquitecto enfocado en el diseño de espacios residenciales y comerciales con una visión contemporánea, funcional y cuidada en cada detalle.
+              </p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
+                En Arkeím trabajo cada proyecto de forma personalizada, integrando diseño, criterio técnico, visualización arquitectónica y acompañamiento cercano, para convertir cada idea en un espacio bien resuelto, estético y construido con intención.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, paddingTop: 8, borderTop: '1px solid #E8E6E1' }}>
+              {[
+                { val: '12+', label: 'Años de experiencia en proyectos residenciales y comerciales.' },
+                { val: 'Proyectos', label: 'enfocados en crear espacios funcionales, estéticos y duraderos.' },
+                { val: 'Diseño', label: 'pensado en las personas, el contexto y la forma de habitar.' },
+                { val: 'Compromiso', label: 'acompañamiento real en todo el proceso, de principio a fin.' },
+              ].map(s => (
+                <div key={s.val} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                  <span style={{ fontFamily: 'Syne, sans-serif', fontSize: 18, fontWeight: 700, color: '#B91C1C', letterSpacing: -0.3 }}>{s.val}</span>
+                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#6B7280', lineHeight: 1.5 }}>{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Footer note */}
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#6B7280', lineHeight: 1.7, textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
+          Según la escala y necesidades de cada proyecto, Arkeím articula una red de colaboradores y especialistas en áreas técnicas, visualización y ejecución, garantizando siempre una dirección clara y personalizada.
+        </p>
+        <p style={{ fontFamily: 'Syne, sans-serif', fontSize: 17, fontWeight: 700, color: '#0A0A0A', textAlign: 'center', margin: 0 }}>
+          Hablemos de tu proyecto. Estoy aquí para escucharte y ayudarte a hacerlo realidad.
+        </p>
       </section>
 
       {/* ── CTA ── */}
