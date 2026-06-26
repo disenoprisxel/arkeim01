@@ -57,8 +57,8 @@ const projectsData = {
       { label: 'Alcance', val: 'Diseño arquitectónico – Coordinación BIM – Radicación licencia de construcción' },
     ],
     related: [
-      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: ARCH3 },
-      { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: ARCH3 },
+      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: '/projects/edificio-calle-53/hero.png' },
+      { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: '/projects/edificio-altamira/hero.png' },
       { id: 'remoto-living', title: 'Remoto Living', cat: 'Residencial', img: '/projects/remoto-living/hero.png' },
     ],
   },
@@ -106,9 +106,9 @@ const projectsData = {
       { label: 'Alcance', val: 'Diseño arquitectónico – Coordinación BIM – Radicación licencia de construcción' },
     ],
     related: [
-      { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
-      { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', img: ARCH2 },
-      { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: ARCH3 },
+      { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', img: '/projects/condominio-jaguey/hero.png' },
+      { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: '/projects/edificio-altamira/hero.png' },
+      { id: 'we-live-78', title: 'We Live 78', cat: 'Comercial', img: '/projects/we-live-78/hero.png' },
     ],
   },
   'edificio-calle-53': {
@@ -157,9 +157,9 @@ const projectsData = {
       { label: 'Alcance', val: 'Diseño arquitectónico – Coordinación BIM – Radicación licencia de construcción' },
     ],
     related: [
-      { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
-      { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
-      { id: 'centro-cultural', title: 'Centro Cultural Llana', cat: 'Institucional', img: ARCH4 },
+      { id: 'we-live-78', title: 'We Live 78', cat: 'Comercial', img: '/projects/we-live-78/hero.png' },
+      { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: '/projects/edificio-altamira/hero.png' },
+      { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', img: '/projects/condominio-jaguey/hero.png' },
     ],
   },
   'edificio-altamira': {
@@ -211,9 +211,9 @@ const projectsData = {
       { label: 'Alcance', val: 'Diseño arquitectónico en AutoCAD, coordinación BIM, modelado digital del proyecto y gestión para radicación de licencia de construcción. Posterior desarrollo de modelo BIM as-built para apoyo en mantenimiento, gestión técnica y futuras intervenciones del edificio.' },
     ],
     related: [
-      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: ARCH3 },
-      { id: 'tipsa-nogal', title: 'Tipsa Nogal', cat: 'Comercial', img: ARCH3 },
-      { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
+      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: '/projects/edificio-calle-53/hero.png' },
+      { id: 'we-live-78', title: 'We Live 78', cat: 'Comercial', img: '/projects/we-live-78/hero.png' },
+      { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', img: '/projects/condominio-jaguey/hero.png' },
     ],
   },
   'condominio-jaguey': {
@@ -267,9 +267,9 @@ const projectsData = {
       { label: 'Alcance', val: 'Participación en la fase de diseño arquitectónico y urbanístico en AutoCAD, modelado y coordinación BIM, desarrollo de propuesta de casas tipo y organización de documentación técnica para trámite de licencia urbanística y de construcción' },
     ],
     related: [
-      { id: 'casa-montes', title: 'Casa Montes', cat: 'Residencial', img: ARCH2 },
-      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: ARCH3 },
-      { id: 'loft-chapinero', title: 'Loft Chapinero', cat: 'Residencial', img: ARCH1 },
+      { id: 'we-live-78', title: 'We Live 78', cat: 'Comercial', img: '/projects/we-live-78/hero.png' },
+      { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', img: '/projects/edificio-calle-53/hero.png' },
+      { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: '/projects/edificio-altamira/hero.png' },
     ],
   },
   'casa-montes': {
