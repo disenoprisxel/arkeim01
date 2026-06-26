@@ -22,8 +22,8 @@ const services = [
 
 const projects = [
   { id: 'remoto-living', title: 'Remoto Living', cat: 'Residencial', img: '/projects/remoto-living/hero.png' },
-  { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', img: '/projects/edificio-altamira/hero.png' },
-  { id: 'we-live-78', title: 'We Live 78', cat: 'Comercial', img: '/projects/we-live-78/hero.png' },
+  { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Residencial', img: '/projects/edificio-altamira/hero.png' },
+  { id: 'we-live-78', title: 'We Live 78', cat: 'Uso Mixto', img: '/projects/we-live-78/hero.png' },
   { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', img: '/projects/condominio-jaguey/hero.png' },
 ]
 

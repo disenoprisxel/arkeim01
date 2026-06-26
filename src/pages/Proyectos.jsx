@@ -12,14 +12,14 @@ const ARCH3 = '/arch3.png'
 const ARCH4 = '/arch4.png'
 
 const projects = [
-  { id: 'we-live-78', title: 'We Live 78', cat: 'Comercial', year: '2025', location: 'Bogotá D.C.', img: '/projects/we-live-78/hero.png', desc: 'Edificio de uso mixto con vivienda colectiva, comercio y servicios básicos en Bogotá. Incluye visor 3D interactivo.' },
+  { id: 'we-live-78', title: 'We Live 78', cat: 'Uso Mixto', year: '2025', location: 'Bogotá D.C.', img: '/projects/we-live-78/hero.png', desc: 'Edificio de uso mixto con vivienda colectiva, comercio y servicios básicos en Bogotá. Incluye visor 3D interactivo.' },
   { id: 'remoto-living', title: 'Remoto Living', cat: 'Residencial', year: '2024', location: 'Santa Marta', img: '/projects/remoto-living/hero.png', desc: 'Desarrollo de vivienda multifamiliar y comercio en Santa Marta. Segunda etapa de Terrazas Tayrona.' },
-  { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Comercial', year: '2023', location: 'Bogotá D.C.', img: '/projects/edificio-altamira/hero.png', desc: 'Edificio residencial multifamiliar en tres torres con diseño arquitectónico y modelo BIM as-built.' },
-  { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Comercial', year: '2025', location: 'Bogotá D.C.', img: '/projects/edificio-calle-53/hero.png', desc: 'Edificio de uso mixto con vivienda colectiva en zona de interés patrimonial. Coordinación BIM y licencia de construcción.' },
+  { id: 'edificio-altamira', title: 'Edificio Altamira', cat: 'Residencial', year: '2023', location: 'Bogotá D.C.', img: '/projects/edificio-altamira/hero.png', desc: 'Edificio residencial multifamiliar en tres torres con diseño arquitectónico y modelo BIM as-built.' },
+  { id: 'edificio-calle-53', title: 'Edificio We Live 53', cat: 'Uso Mixto', year: '2025', location: 'Bogotá D.C.', img: '/projects/edificio-calle-53/hero.png', desc: 'Edificio de uso mixto con vivienda colectiva en zona de interés patrimonial. Coordinación BIM y licencia de construcción.' },
   { id: 'condominio-jaguey', title: 'Condominio El Jagüey', cat: 'Residencial', year: '2024', location: 'Yopal', img: '/projects/condominio-jaguey/hero.png', desc: 'Urbanismo residencial de 49.000 m² con vivienda, comercio y posada turística en Yopal.' },
 ]
 
-const cats = ['Todos', 'Residencial', 'Comercial']
+const cats = ['Todos', 'Residencial', 'Uso Mixto']
 
 export default function Proyectos() {
   const [active, setActive] = useState('Todos')

@@ -14,7 +14,7 @@ const ARCH4 = '/arch4.png'
 const projectsData = {
   'we-live-78': {
     title: 'We Live 78',
-    cat: 'Comercial',
+    cat: 'Uso Mixto',
     location: 'Bogotá D.C., Colombia',
     year: '2025',
     hero: '/projects/we-live-78/hero.png',
@@ -113,7 +113,7 @@ const projectsData = {
   },
   'edificio-calle-53': {
     title: 'Edificio We Live 53',
-    cat: 'Comercial',
+    cat: 'Uso Mixto',
     location: 'Bogotá D.C., Colombia',
     year: '2025',
     hero: '/projects/edificio-calle-53/hero.png',
@@ -164,7 +164,7 @@ const projectsData = {
   },
   'edificio-altamira': {
     title: 'Edificio Altamira',
-    cat: 'Comercial',
+    cat: 'Residencial',
     location: 'Bogotá D.C., Colombia',
     year: '2023',
     hero: '/projects/edificio-altamira/hero.png',
