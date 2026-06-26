@@ -463,7 +463,7 @@ export default function QuienesSomos() {
         className="qs-cta"
       >
         <img
-          src={ARCH2}
+          src="/qs-cta-bg.png"
           alt=""
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
         />
