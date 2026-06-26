@@ -309,10 +309,10 @@ export default function QuienesSomos() {
       </section>
 
       {/* ── TEAM ── */}
-      <section style={{ backgroundColor: '#F5F4F2', padding: '80px 60px', display: 'flex', flexDirection: 'column', gap: 48 }} className="team-section">
+      <section style={{ backgroundColor: '#F5F4F2', padding: '80px 60px', display: 'flex', flexDirection: 'column', gap: 48, alignItems: 'center' }} className="team-section">
 
         {/* Top: título izq + 4 pilares der */}
-        <div style={{ display: 'flex', gap: 60, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', gap: 60, flexWrap: 'wrap', alignItems: 'flex-start', width: '100%', maxWidth: 1100 }}>
 
           {/* Izquierda */}
           <div style={{ flex: '1 1 340px', display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -359,14 +359,14 @@ export default function QuienesSomos() {
         </div>
 
         {/* Founder card */}
-        <div style={{ backgroundColor: '#fff', borderRadius: 4, overflow: 'hidden', display: 'flex', flexWrap: 'wrap' }}>
+        <div style={{ width: '100%', maxWidth: 1100, backgroundColor: '#fff', borderRadius: 4, overflow: 'hidden', display: 'flex', flexWrap: 'wrap' }}>
           {/* Photo */}
-          <div style={{ flex: '0 0 42%', minWidth: 280, minHeight: 520 }}>
+          <div style={{ flex: '0 0 380px', maxWidth: 380, height: 480 }}>
             <img src="/arquitecto.jpg" alt="Yilmer Martínez" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
           </div>
 
           {/* Info */}
-          <div style={{ flex: 1, minWidth: 280, padding: '48px 48px', display: 'flex', flexDirection: 'column', gap: 24, justifyContent: 'center' }}>
+          <div style={{ flex: 1, minWidth: 280, padding: '44px 48px', display: 'flex', flexDirection: 'column', gap: 22, justifyContent: 'center' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 30, fontWeight: 700, color: '#0A0A0A', margin: 0, letterSpacing: -0.5 }}>Yilmer Martínez</h3>
               <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 500, color: '#B91C1C', letterSpacing: 3, textTransform: 'uppercase' }}>Arquitecto · Fundador de Arkeím</span>
@@ -413,7 +413,7 @@ export default function QuienesSomos() {
         </div>
 
         {/* Footer note */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'center', width: '100%', maxWidth: 1100 }}>
           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#6B7280', lineHeight: 1.7, textAlign: 'center', maxWidth: 680, margin: 0 }}>
             Según la escala y necesidades de cada proyecto, Arkeím articula una red de colaboradores y especialistas en áreas técnicas, visualización y ejecución, garantizando siempre una dirección clara y personalizada.
           </p>
