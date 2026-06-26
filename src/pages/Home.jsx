@@ -6,7 +6,7 @@ import RevealSection from '../components/RevealSection'
 import SEO from '../components/SEO'
 import ClientsCarousel from '../components/ClientsCarousel'
 
-const HERO = '/hero.png'
+const HERO = '/hero.jpg'
 const ARCH1 = '/arch1.png'
 const ARCH2 = '/arch2.png'
 const ARCH3 = '/arch3.png'
