@@ -183,6 +183,7 @@ export default function Footer() {
             flexWrap: 'wrap',
             gap: 12,
           }}
+          className="footer-bottom"
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.25)' }}>
@@ -263,8 +264,9 @@ export default function Footer() {
 
       <style>{`
         @media (max-width: 768px) {
-          .footer-inner { padding: 40px 24px 32px !important; }
+          .footer-inner { padding: 40px 24px 100px !important; }
           .footer-top { flex-direction: column !important; gap: 32px !important; }
+          .footer-bottom { flex-direction: column-reverse !important; align-items: flex-start !important; gap: 16px !important; }
         }
       `}</style>
     </footer>
