@@ -204,28 +204,57 @@ export default function Footer() {
               <span style={{ color: '#e25555' }}>❤</span>
             </span>
           </div>
-          <div style={{ display: 'flex', gap: 24 }}>
+          <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
             {[
-              { label: 'Instagram', url: 'https://www.instagram.com/arkeimsas?igsh=aGg1eG82cmQwbzFk' },
-              { label: 'Facebook', url: 'https://www.facebook.com/Arkeimsas' },
-              { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yilmer-martinez-50152637a/' },
+              {
+                label: 'Instagram',
+                url: 'https://www.instagram.com/arkeimsas?igsh=aGg1eG82cmQwbzFk',
+                icon: (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'Facebook',
+                url: 'https://www.facebook.com/Arkeimsas',
+                icon: (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'LinkedIn',
+                url: 'https://www.linkedin.com/in/yilmer-martinez-50152637a/',
+                icon: (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                ),
+              },
             ].map(s => (
               <a
                 key={s.label}
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={s.label}
                 style={{
-                  fontFamily: 'DM Sans, sans-serif',
-                  fontSize: 13,
                   color: 'rgba(255,255,255,0.3)',
                   textDecoration: 'none',
                   transition: 'color 0.2s',
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
-                onMouseEnter={e => (e.target.style.color = '#fff')}
-                onMouseLeave={e => (e.target.style.color = 'rgba(255,255,255,0.3)')}
+                onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.3)')}
               >
-                {s.label}
+                {s.icon}
               </a>
             ))}
           </div>

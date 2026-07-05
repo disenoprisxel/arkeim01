@@ -102,16 +102,45 @@ export default function Contacto() {
           <RevealSection delay={0.4} direction="left">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 500, color: '#B91C1C', letterSpacing: 4, textTransform: 'uppercase' }}>Redes sociales</span>
-              <div style={{ display: 'flex', gap: 16 }}>
+              <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
                 {[
-                  { label: 'Instagram', url: 'https://www.instagram.com/arkeimsas?igsh=aGg1eG82cmQwbzFk' },
-                  { label: 'Facebook', url: 'https://www.facebook.com/Arkeimsas' },
-                  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yilmer-martinez-50152637a/' },
+                  {
+                    label: 'Instagram',
+                    url: 'https://www.instagram.com/arkeimsas?igsh=aGg1eG82cmQwbzFk',
+                    icon: (
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                      </svg>
+                    ),
+                  },
+                  {
+                    label: 'Facebook',
+                    url: 'https://www.facebook.com/Arkeimsas',
+                    icon: (
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                      </svg>
+                    ),
+                  },
+                  {
+                    label: 'LinkedIn',
+                    url: 'https://www.linkedin.com/in/yilmer-martinez-50152637a/',
+                    icon: (
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect x="2" y="9" width="4" height="12"/>
+                        <circle cx="4" cy="4" r="2"/>
+                      </svg>
+                    ),
+                  },
                 ].map(s => (
-                  <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#6B7280', textDecoration: 'none', transition: 'color 0.2s' }}
+                  <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" title={s.label}
+                    style={{ color: '#6B7280', textDecoration: 'none', transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
                     onMouseEnter={e => e.currentTarget.style.color = '#B91C1C'}
                     onMouseLeave={e => e.currentTarget.style.color = '#6B7280'}>
-                    {s.label}
+                    {s.icon}
                   </a>
                 ))}
               </div>
